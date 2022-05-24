@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="HospitalManagementDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Doctor">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="50" />
+    <Property Name="BirthPlace" Type="varchar" MaxLength="50" />
+    <Property Name="BirthTime" Type="varchar" MaxLength="10" />
+    <Property Name="City" Type="varchar" MaxLength="50" />
+    <Property Name="Street" Type="varchar" MaxLength="50" />
+    <Property Name="HouseNumber" Type="varchar" MaxLength="10" />
+    <Property Name="ZipCode" Type="varchar" MaxLength="4" />
+    <Property Name="Cardnum" Type="varchar" MaxLength="9" />
+    <Property Name="Problem" Type="varchar" MaxLength="200" />
+    <Property Name="Diagnose" Type="varchar" MaxLength="200" />
+  </EntityType>
+  <EntityContainer Name="HospitalManagementDBModelStoreContainer">
+    <EntitySet Name="Doctor" EntityType="Self.Doctor" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>
