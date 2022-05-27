@@ -10,6 +10,5 @@ az egészségügyi intézményekben.
 0.1.1
 
 ### Fejlesztő
-Tarr Imre --- tarr.imre2630@gmail.com  
+Tarr Imre --- tarr.imre2630@gmail.com 
 
-![Orvosi alkalmazás](https://toxy.hu/fs/csharplogo.png)
