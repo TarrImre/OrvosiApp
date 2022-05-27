@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Windows;
 using WebApi_Client.DataProviders;
 using WebApi_Common.Models;
@@ -46,6 +48,7 @@ namespace WebApi_Client
             }
         }
 
+
         private void CreateButton_Click(object sender, RoutedEventArgs e)
         {
             if (ValidatePerson())
@@ -66,6 +69,8 @@ namespace WebApi_Client
                 Close();
             }
         }
+
+
 
         private void UpdateButton_Click(object sender, RoutedEventArgs e)
         {
@@ -149,6 +154,13 @@ namespace WebApi_Client
             }
 
             return true;
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            var people = PersonDataProvider.GetPeople();
+            DataGrid.ItemsSource = people;
+  
         }
     }
 }
