@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Text.Json;
 using WebApi_Common.Models;
 
@@ -7,24 +8,57 @@ namespace WebApi_Server.Repositories
 {
     public static class PersonRepository
     {
-        private const string filename = "People.json";
 
-        public static IEnumerable<Person> GetPeople()
+        public static IList<Person> GetPeople()
         {
-            if (File.Exists(filename))
+            using (var database = new PersonContext())
             {
-                var rawData = File.ReadAllText(filename);
-                var people = JsonSerializer.Deserialize<IEnumerable<Person>>(rawData);
+                var people = database.People.ToList();
+
                 return people;
             }
-
-            return new List<Person>();
         }
-
-        public static void StorePeople(IEnumerable<Person> people)
+        public static Person GetPerson(long id)
         {
-            var rawData = JsonSerializer.Serialize(people);
-            File.WriteAllText(filename, rawData);
+            using (var database = new PersonContext())
+            {
+                var person = database.People.Where(p => p.Id == id).FirstOrDefault();
+
+                return person;
+            }
         }
+
+        public static void AddPerson(Person person)
+        {
+            using (var database = new PersonContext())
+            {
+                database.People.Add(person);
+
+                database.SaveChanges();
+            }
+        }
+
+        public static void UpdatePerson(Person person)
+        {
+            using (var database = new PersonContext())
+            {
+                database.People.Update(person);
+
+                database.SaveChanges();
+
+            }
+        }
+
+        public static void DeletePerson(Person person)
+        {
+            using (var database = new PersonContext())
+            {
+                database.People.Remove(person);
+
+                database.SaveChanges();
+            }
+        }
+
+
     }
 }

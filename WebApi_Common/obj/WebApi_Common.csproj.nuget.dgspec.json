@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\tarri\\Documents\\GitHub\\OrvosiAlkalmazas\\WebApi\\WebApi_Common\\WebApi_Common.csproj": {}
+    "C:\\Users\\tarri\\Documents\\GitHub\\OrvosiApp\\WebApi_Common\\WebApi_Common.csproj": {}
   },
   "projects": {
-    "C:\\Users\\tarri\\Documents\\GitHub\\OrvosiAlkalmazas\\WebApi\\WebApi_Common\\WebApi_Common.csproj": {
+    "C:\\Users\\tarri\\Documents\\GitHub\\OrvosiApp\\WebApi_Common\\WebApi_Common.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\tarri\\Documents\\GitHub\\OrvosiAlkalmazas\\WebApi\\WebApi_Common\\WebApi_Common.csproj",
+        "projectUniqueName": "C:\\Users\\tarri\\Documents\\GitHub\\OrvosiApp\\WebApi_Common\\WebApi_Common.csproj",
         "projectName": "WebApi_Common",
-        "projectPath": "C:\\Users\\tarri\\Documents\\GitHub\\OrvosiAlkalmazas\\WebApi\\WebApi_Common\\WebApi_Common.csproj",
+        "projectPath": "C:\\Users\\tarri\\Documents\\GitHub\\OrvosiApp\\WebApi_Common\\WebApi_Common.csproj",
         "packagesPath": "C:\\Users\\tarri\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\tarri\\Documents\\GitHub\\OrvosiAlkalmazas\\WebApi\\WebApi_Common\\obj\\",
+        "outputPath": "C:\\Users\\tarri\\Documents\\GitHub\\OrvosiApp\\WebApi_Common\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

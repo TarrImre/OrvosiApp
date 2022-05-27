@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using System;
+using System.Windows;
 using WebApi_Client.DataProviders;
 using WebApi_Common.Models;
 
@@ -14,6 +15,8 @@ namespace WebApi_Client
         {
             InitializeComponent();
 
+           
+
             if (person != null)
             {
                 _person = person;
@@ -26,8 +29,9 @@ namespace WebApi_Client
                 CardNumTextBox.Text = _person.Cardnum;
                 ProblemTextBox.Text = _person.Problem;
                 DiagnoseTextBox.Text = _person.Diagnose;
+                AddedTimeText.Text = DateTime.Now.ToString();
 
-
+                AddedTimeText.Visibility = Visibility.Collapsed;
                 CreateButton.Visibility = Visibility.Collapsed;
                 UpdateButton.Visibility = Visibility.Visible;
                 DeleteButton.Visibility = Visibility.Visible;
@@ -54,6 +58,7 @@ namespace WebApi_Client
                 _person.Cardnum = CardNumTextBox.Text;
                 _person.Problem = ProblemTextBox.Text;
                 _person.Diagnose = DiagnoseTextBox.Text;
+                _person.AddedTime = DateTime.Now;
 
                 PersonDataProvider.CreatePerson(_person);
 

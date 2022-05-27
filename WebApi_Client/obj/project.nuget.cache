@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "/3j6JsHCLHWl85A2afQUlvgUUdnCwB/mIO/9zBg4wrtyFdDoB7gcJhe+p4p/LNxyP7+OxBXYMIHRipfW66sxQQ==",
+  "dgSpecHash": "8gat0/Cqh6fztFwP6hwtcJWK49htjo1M9S0go6M00fgQnDV7X6e2S6dbzoStT3ZUJQemR/BdRq/nKLVI/3sqYA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\tarri\\Documents\\GitHub\\OrvosiAlkalmazas\\WebApi\\WebApi_Client\\WebApi_Client.csproj",
+  "projectFilePath": "C:\\Users\\tarri\\Documents\\GitHub\\OrvosiApp\\WebApi_Client\\WebApi_Client.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\tarri\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512"
   ],
