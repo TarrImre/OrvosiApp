@@ -18,86 +18,53 @@ namespace WebApi_Server.Controllers
         }
 
         [HttpGet("{id}")]
-        public ActionResult<Person> Get(int id)
+        public ActionResult<Person> Get(long id)
         {
-            var people = PersonRepository.GetPeople();
 
-            var person = people.FirstOrDefault(x => x.Id == id);
+            var person = PersonRepository.GetPerson(id);
             if (person != null)
             {
                 return Ok(person);
             }
-
-            return NotFound();
+            else
+            {
+                return NotFound();
+            }
         }
 
         [HttpPost]
-        public ActionResult Post([FromBody]Person person)
+        public ActionResult Post(Person person)
         {
-            var people = PersonRepository.GetPeople().ToList();
+            PersonRepository.AddPerson(person);
 
-            person.Id = GetNewId(people);
-            people.Add(person);
-
-            PersonRepository.StorePeople(people);
             return Ok();
         }
 
-        [HttpPut]
-        public ActionResult Put([FromBody] Person person)
+        [HttpPut("{id}")]
+        public ActionResult Put(Person person, long id)
         {
-            var people = PersonRepository.GetPeople().ToList();
+            var dbPerson = PersonRepository.GetPerson(id);
 
-            var personToUpdate = people.FirstOrDefault(p => p.Id == person.Id);
-            if (personToUpdate != null)
+            if (dbPerson != null)
             {
-                personToUpdate.FirstName = person.FirstName;
-                personToUpdate.LastName = person.LastName;
-                personToUpdate.DateOfBirth = person.DateOfBirth; 
-                personToUpdate.City = person.City;
-                personToUpdate.StreetHouse = person.StreetHouse;
-                personToUpdate.Cardnum = person.Cardnum;
-                personToUpdate.Problem = person.Problem;
-                personToUpdate.Diagnose = person.Diagnose;
-
-
-
-                PersonRepository.StorePeople(people);
+                PersonRepository.UpdatePerson(person);
                 return Ok();
             }
-
             return NotFound();
         }
 
         [HttpDelete("{id}")]
         public ActionResult Delete(int id)
         {
-            var people = PersonRepository.GetPeople().ToList();
 
-            var personToDelete = people.FirstOrDefault(p => p.Id == id);
-            if (personToDelete != null)
+            var person = PersonRepository.GetPerson(id);
+            if (person != null)
             {
-                people.Remove(personToDelete);
-
-                PersonRepository.StorePeople(people);
+                PersonRepository.DeletePerson(person);
                 return Ok();
             }
 
             return NotFound();
-        }
-
-        private long GetNewId(IEnumerable<Person> people)
-        {
-            long newId = 0;
-            foreach (var person in people)
-            {
-                if (newId < person.Id)
-                {
-                    newId = person.Id;
-                }
-            }
-
-            return newId + 1;
         }
     }
 }
