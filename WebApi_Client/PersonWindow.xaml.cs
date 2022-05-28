@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Text.RegularExpressions;
 using System.Windows;
 using WebApi_Client.DataProviders;
 using WebApi_Common.Models;
@@ -17,7 +18,7 @@ namespace WebApi_Client
         {
             InitializeComponent();
 
-           
+         
 
             if (person != null)
             {
@@ -94,7 +95,7 @@ namespace WebApi_Client
 
         private void DeleteButton_Click(object sender, RoutedEventArgs e)
         {
-            if (MessageBox.Show("Do you really want to delete?", "Question", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
+            if (MessageBox.Show("Biztosan akarod törölni?", "Question", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
             {
                 PersonDataProvider.DeletePerson(_person.Id);
 
@@ -107,19 +108,19 @@ namespace WebApi_Client
         {
             if (string.IsNullOrEmpty(FirstNameTextBox.Text))
             {
-                MessageBox.Show("First name should not be empty.");
+                MessageBox.Show("Keresztnév nem lehet üres!");
                 return false;
             }
 
             if (string.IsNullOrEmpty(LastNameTextBox.Text))
             {
-                MessageBox.Show("Last name should not be empty.");
+                MessageBox.Show("Vezetéknév nem lehet üres!");
                 return false;
             }
 
             if (!DateOfBirthDatePicker.SelectedDate.HasValue)
             {
-                MessageBox.Show("Please select a date of birth date.");
+                MessageBox.Show("Válassza ki a születés dátumát!");
                 return false;
             }
 
@@ -140,6 +141,11 @@ namespace WebApi_Client
                 MessageBox.Show("TAJ szám nem lehet üres!");
                 return false;
             }
+            else if(!Regex.IsMatch(CardNumTextBox.Text, @"[0-9]{3}[ ][0-9]{3}[ ][0-9]{3}"))
+            {
+                MessageBox.Show("Nem megfelelő formátum!\nJavasolt: 000 000 000");
+                return false;
+            }
 
             if (string.IsNullOrEmpty(ProblemTextBox.Text))
             {
@@ -156,11 +162,46 @@ namespace WebApi_Client
             return true;
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+    /*    private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            UpdatePeopleListBox();
+        }
+
+        private void DataGrid_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
+        {
+             var selectedPerson = DataGrid.SelectedItem as Person;
+
+            if (selectedPerson != null)
+            {
+                var window = new EditPage(selectedPerson);
+                if (window.ShowDialog() ?? false)
+                {
+                    UpdatePeopleListBox();
+                }
+
+                DataGrid.UnselectAll();
+            }
+        }
+
+        private void AddPerson_Click(object sender, RoutedEventArgs args)
+        {
+            var window = new EditPage(null);
+            if (window.ShowDialog() ?? false)
+            {
+                UpdatePeopleListBox();
+            }
+        }
+
+        private void UpdatePeopleListBox()
         {
             var people = PersonDataProvider.GetPeople();
             DataGrid.ItemsSource = people;
-  
         }
+
+        private void DataGrid_Loaded(object sender, RoutedEventArgs e)
+        {
+            UpdatePeopleListBox();
+        }*/
+
     }
 }

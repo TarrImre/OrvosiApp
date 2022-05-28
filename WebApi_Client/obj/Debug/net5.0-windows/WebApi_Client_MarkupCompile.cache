@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET5_0;NETCOREAPP
 C:\Users\tarri\Documents\GitHub\OrvosiApp\WebApi_Client\App.xaml
-2-520508225
+4-865969836
 
-52104032073
+7-1957252770
 195-1498518229
-MainWindow.xaml;PersonWindow.xaml;
+EditPage.xaml;MainWindow.xaml;PersonWindow.xaml;SelectPage.xaml;
 
 False
 
