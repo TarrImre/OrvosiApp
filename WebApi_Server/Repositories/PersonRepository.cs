@@ -32,7 +32,8 @@ namespace WebApi_Server.Repositories
         {
             using (var database = new PersonContext())
             {
-                database.People.Add(person);
+                //database.People.Add(person);
+                database.People.Update(person);
 
                 database.SaveChanges();
             }

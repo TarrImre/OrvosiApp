@@ -54,3 +54,5 @@ C:\Users\tarri\Documents\GitHub\OrvosiApp\WebApi_Client\obj\Debug\net5.0-windows
 C:\Users\tarri\Documents\GitHub\OrvosiApp\WebApi_Client\obj\Debug\net5.0-windows\WebApi_Client.pdb
 C:\Users\tarri\Documents\GitHub\OrvosiApp\WebApi_Client\obj\Debug\net5.0-windows\WebApi_Client.genruntimeconfig.cache
 C:\Users\tarri\Documents\GitHub\OrvosiApp\WebApi_Client\obj\Debug\net5.0-windows\ref\WebApi_Client.dll
+C:\Users\tarri\Documents\GitHub\OrvosiApp\WebApi_Client\obj\Debug\net5.0-windows\EditPage.g.cs
+C:\Users\tarri\Documents\GitHub\OrvosiApp\WebApi_Client\obj\Debug\net5.0-windows\EditPage.baml

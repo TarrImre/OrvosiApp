@@ -26,9 +26,9 @@ namespace WebApi_Common.Models
         [Required]
         public DateTime AddedTime { get; set; }
 
-        public override string ToString()
+       /* public override string ToString()
         {
             return $"{FirstName} {LastName} - {DateOfBirth.Date} - {City} - {StreetHouse} - {Cardnum} - {Problem} - {Diagnose} - {AddedTime}";
-        }
+        }*/
     }
 }

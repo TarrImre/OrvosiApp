@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "edb9W7NA2ReGTMottiKUqVfK+KtkPGqu03OpKWz0LnlDk/rVa9Cddm+JpjXilsPwXp9fWmh3QNX1q/zJxv65Tw==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\tarri\\Documents\\GitHub\\OrvosiApp\\WebApi_Assist\\WebApi_Assist.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\tarri\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512"
+  ],
+  "logs": []
+}

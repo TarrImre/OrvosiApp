@@ -4,6 +4,7 @@ using System.Windows.Controls;
 using WebApi_Client.DataProviders;
 using WebApi_Common.Models;
 
+
 namespace WebApi_Client
 {
     /// <summary>
@@ -14,23 +15,9 @@ namespace WebApi_Client
         public MainWindow()
         {
             InitializeComponent();
+
         }
 
-        private void ListBox_SelectionChanged(object sender, SelectionChangedEventArgs args)
-        {
-            var selectedPerson = PeopleListBox.SelectedItem as Person;
-
-            if (selectedPerson != null)
-            {
-                var window = new PersonWindow(selectedPerson);
-                if (window.ShowDialog() ?? false)
-                {
-                    UpdatePeopleListBox();
-                }
-
-                PeopleListBox.UnselectAll();
-            }
-        }
 
         private void AddPerson_Click(object sender, RoutedEventArgs args)
         {
@@ -41,10 +28,36 @@ namespace WebApi_Client
             }
         }
 
+        private void DataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            var selectedPerson = DataGrid.SelectedItem as Person;
+
+            if (selectedPerson != null)
+            {
+                var window = new EditPage(selectedPerson);
+                if (window.ShowDialog() ?? false)
+                {
+                    UpdatePeopleListBox();
+                }
+
+                DataGrid.UnselectAll();
+            }
+        }
+
         private void UpdatePeopleListBox()
         {
             var people = PersonDataProvider.GetPeople().ToList();
-            PeopleListBox.ItemsSource = people;
+            DataGrid.ItemsSource = people;
+        }
+
+        private void DataGrid_Loaded(object sender, RoutedEventArgs e)
+        {
+            UpdatePeopleListBox();
+        }
+
+        private void Refresh_Click(object sender, RoutedEventArgs e)
+        {
+            UpdatePeopleListBox();
         }
     }
 }
