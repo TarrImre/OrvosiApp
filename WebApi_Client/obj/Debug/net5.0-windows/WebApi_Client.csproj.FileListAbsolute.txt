@@ -56,5 +56,3 @@ C:\Users\tarri\Documents\GitHub\OrvosiApp\WebApi_Client\obj\Debug\net5.0-windows
 C:\Users\tarri\Documents\GitHub\OrvosiApp\WebApi_Client\obj\Debug\net5.0-windows\ref\WebApi_Client.dll
 C:\Users\tarri\Documents\GitHub\OrvosiApp\WebApi_Client\obj\Debug\net5.0-windows\EditPage.g.cs
 C:\Users\tarri\Documents\GitHub\OrvosiApp\WebApi_Client\obj\Debug\net5.0-windows\EditPage.baml
-C:\Users\tarri\Documents\GitHub\OrvosiApp\WebApi_Client\obj\Debug\net5.0-windows\SelectPage.g.cs
-C:\Users\tarri\Documents\GitHub\OrvosiApp\WebApi_Client\obj\Debug\net5.0-windows\SelectPage.baml
