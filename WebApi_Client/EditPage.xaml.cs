@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Text.RegularExpressions;
 using System.Windows;
+using System.Windows.Input;
 using WebApi_Client.DataProviders;
 using WebApi_Common.Models;
 
@@ -93,7 +94,7 @@ namespace WebApi_Client
 
         private void DeleteButton_Click(object sender, RoutedEventArgs e)
         {
-            if (MessageBox.Show("Do you really want to delete?", "Question", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
+            if (MessageBox.Show("Biztosan akarod törölni?", "Question", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
             {
                 PersonDataProvider.DeletePerson(_person.Id);
 
@@ -106,13 +107,13 @@ namespace WebApi_Client
         {
             if (string.IsNullOrEmpty(FirstNameTextBoxEDIT.Text))
             {
-                MessageBox.Show("Keresztnév nem lehet üres!");
+                MessageBox.Show("Vezetéknév nem lehet üres!");
                 return false;
             }
 
             if (string.IsNullOrEmpty(LastNameTextBoxEDIT.Text))
             {
-                MessageBox.Show("Vezetéknév nem lehet üres!");
+                MessageBox.Show("Keresztnév nem lehet üres!");
                 return false;
             }
 
@@ -160,7 +161,22 @@ namespace WebApi_Client
             return true;
         }
 
+        private void MovePanel_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            if (e.LeftButton == MouseButtonState.Pressed)
+            {
+                this.DragMove();
+            }
+        }
 
+        private void Button_Click_Close(object sender, RoutedEventArgs e)
+        {
+            Close();
+        }
+        /*private void Button_Click_Talca(object sender, RoutedEventArgs e)
+        {
+            this.WindowState = WindowState.Minimized;
+        }*/
 
     }
 }

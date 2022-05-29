@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Text.RegularExpressions;
 using System.Windows;
+using System.Windows.Input;
 using WebApi_Client.DataProviders;
 using WebApi_Common.Models;
 
@@ -108,13 +109,13 @@ namespace WebApi_Client
         {
             if (string.IsNullOrEmpty(FirstNameTextBox.Text))
             {
-                MessageBox.Show("Keresztnév nem lehet üres!");
+                MessageBox.Show("Vezetéknév nem lehet üres!");
                 return false;
             }
 
             if (string.IsNullOrEmpty(LastNameTextBox.Text))
             {
-                MessageBox.Show("Vezetéknév nem lehet üres!");
+                MessageBox.Show("Keresztnév nem lehet üres!");
                 return false;
             }
 
@@ -162,45 +163,21 @@ namespace WebApi_Client
             return true;
         }
 
-    /*    private void Button_Click(object sender, RoutedEventArgs e)
+        private void MovePanel_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            UpdatePeopleListBox();
-        }
-
-        private void DataGrid_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
-        {
-             var selectedPerson = DataGrid.SelectedItem as Person;
-
-            if (selectedPerson != null)
+            if (e.LeftButton == MouseButtonState.Pressed)
             {
-                var window = new EditPage(selectedPerson);
-                if (window.ShowDialog() ?? false)
-                {
-                    UpdatePeopleListBox();
-                }
-
-                DataGrid.UnselectAll();
+                this.DragMove();
             }
         }
 
-        private void AddPerson_Click(object sender, RoutedEventArgs args)
+        private void Button_Click_Close(object sender, RoutedEventArgs e)
         {
-            var window = new EditPage(null);
-            if (window.ShowDialog() ?? false)
-            {
-                UpdatePeopleListBox();
-            }
+            Close();
         }
-
-        private void UpdatePeopleListBox()
+      /*private void Button_Click_Talca(object sender, RoutedEventArgs e)
         {
-            var people = PersonDataProvider.GetPeople();
-            DataGrid.ItemsSource = people;
-        }
-
-        private void DataGrid_Loaded(object sender, RoutedEventArgs e)
-        {
-            UpdatePeopleListBox();
+            this.WindowState = WindowState.Minimized;
         }*/
 
     }
