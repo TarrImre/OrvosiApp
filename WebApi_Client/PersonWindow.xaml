@@ -5,73 +5,105 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WebApi_Client"
         mc:Ignorable="d"
-        Title="Person data" Height="800" Width="1200">
-    <Grid>
-
-        <Grid.RowDefinitions>
-            <RowDefinition Height="auto"/>
-            <RowDefinition Height="*"/>
-        </Grid.RowDefinitions>
-
-        <Grid Grid.Row="0">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="150"/>
-                <ColumnDefinition Width="*"/>
-            </Grid.ColumnDefinitions>
+        Title="Doktor | Felvétel"
+        Height="450"
+        Width="340"
+        WindowStyle="None"
+        WindowStartupLocation="CenterScreen"
+        ResizeMode="NoResize"
+        Background="#F3F5F9"
+        AllowsTransparency="True"
+        Icon="https://toxy.hu/csharpimages/ikon.ico">
+    <Window.Resources>
+        <Style TargetType="Button"  x:Key="LightGreenButton">
+            <Setter Property="Width" Value="100"/>
+            <Setter Property="Height" Value="30"/>
+            <Setter Property="Margin" Value="6"/>
+            <Setter Property="Background" Value="#03b484"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border Background="{TemplateBinding Background}">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="#038f69"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </Window.Resources>
+    <Border Background="Transparent" BorderBrush="#044123" BorderThickness="2">
+        <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition Height="auto"/>
-                <RowDefinition Height="auto"/>
-                <RowDefinition Height="auto"/>
-                <RowDefinition Height="auto"/>
-                <RowDefinition Height="auto"/>
-                <RowDefinition Height="auto"/>
-                <RowDefinition Height="auto"/>
-                <RowDefinition Height="auto"/>
-                <RowDefinition Height="auto"/>
-                <RowDefinition Height="300"/>
+                <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
 
-            <Label Grid.Column="0" Grid.Row="0" Content="First name" Margin="10"/>
-            <TextBox x:Name="FirstNameTextBox" Grid.Column="1" Grid.Row="0" Margin="10"/>
+            <Grid Grid.Row="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="150"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                </Grid.RowDefinitions>
+                <StackPanel Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Background="#044123" x:Name="MovePanel" MouseDown="MovePanel_MouseDown">
+                    <TextBlock TextWrapping="Wrap" Text="Betegfelvétel" Margin="10,2,0,0" FontWeight="Bold" Foreground="#03b484"/>
+                </StackPanel>
+                <Button Click="Button_Click_Close" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Background="Transparent" BorderBrush="Transparent" Margin="0,0,5,0"  Width="20" Height="20" HorizontalAlignment="Right">
+                    <Image Source="https://toxy.hu/csharpimages/closelight.png"></Image>
+                </Button>
+              <!--<Button Click="Button_Click_Talca" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Background="Transparent" BorderBrush="Transparent" Margin="0,0,25,0"  Width="20" Height="20" HorizontalAlignment="Right">
+                    <Image Source="https://toxy.hu/csharpimages/talcalight.png"></Image>
+                </Button>-->
+                
+                <Label Grid.Column="0" Grid.Row="1" Content="Vezetéknév" Margin="10"/>
+                <TextBox x:Name="FirstNameTextBox" Grid.Column="1" Grid.Row="1" Margin="10"/>
 
-            <Label Grid.Column="0" Grid.Row="1" Content="Last name" Margin="10"/>
-            <TextBox x:Name="LastNameTextBox" Grid.Column="1" Grid.Row="1" Margin="10"/>
+                <Label Grid.Column="0" Grid.Row="2" Content="Keresztnév" Margin="10"/>
+                <TextBox x:Name="LastNameTextBox" Grid.Column="1" Grid.Row="2" Margin="10"/>
 
-            <Label Grid.Column="0" Grid.Row="2" Content="Date of birth" Margin="10"/>
-            <DatePicker x:Name="DateOfBirthDatePicker" Grid.Column="1" Grid.Row="2" Margin="10"/>
+                <Label Grid.Column="0" Grid.Row="3" Content="Születési idő" Margin="10"/>
+                <DatePicker x:Name="DateOfBirthDatePicker" Grid.Column="1" Grid.Row="3" Margin="10"/>
 
-            <Label Grid.Column="0" Grid.Row="3" Content="Város" Margin="10"/>
-            <TextBox x:Name="CityTextBox" Grid.Column="1" Grid.Row="3" Margin="10"/>
+                <Label Grid.Column="0" Grid.Row="4" Content="Város" Margin="10"/>
+                <TextBox x:Name="CityTextBox" Grid.Column="1" Grid.Row="4" Margin="10"/>
 
-            <Label Grid.Column="0" Grid.Row="4" Content="Utca-házszám" Margin="10"/>
-            <TextBox x:Name="StreetHouseTextBox" Grid.Column="1" Grid.Row="4" Margin="10"/>
+                <Label Grid.Column="0" Grid.Row="5" Content="Utca-házszám" Margin="10"/>
+                <TextBox x:Name="StreetHouseTextBox" Grid.Column="1" Grid.Row="5" Margin="10"/>
 
-            <Label Grid.Column="0" Grid.Row="5" Content="Tajszám" Margin="10"/>
-            <TextBox x:Name="CardNumTextBox" Grid.Column="1" Grid.Row="5" Margin="10"/>
+                <Label Grid.Column="0" Grid.Row="6" Content="Tajszám" Margin="10"/>
+                <TextBox x:Name="CardNumTextBox" Grid.Column="1" Grid.Row="6" Margin="10"/>
 
-            <Label Grid.Column="0" Grid.Row="6" Content="Panasz" Margin="10"/>
-            <TextBox x:Name="ProblemTextBox" Grid.Column="1" Grid.Row="6" Margin="10"/>
+                <Label Grid.Column="0" Grid.Row="7" Content="Panasz" Margin="10"/>
+                <TextBox x:Name="ProblemTextBox" Grid.Column="1" Grid.Row="7" Margin="10"/>
 
-            <Label Grid.Column="0" Grid.Row="7" Content="Diagnózis" Margin="10"/>
-            <TextBox x:Name="DiagnoseTextBox" Grid.Column="1" Grid.Row="7" Margin="10"/>
+                <Label Grid.Column="0" Grid.Row="8" Content="Diagnózis" Margin="10"/>
+                <TextBox x:Name="DiagnoseTextBox" Grid.Column="1" Grid.Row="8" Margin="10"/>
 
-            <TextBlock x:Name="AddedTimeText" HorizontalAlignment="Center" Margin="0,0,0,0" Grid.Column="0" Grid.Row="8" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top"/>
+                <TextBlock x:Name="AddedTimeText" HorizontalAlignment="Center" Margin="0,0,0,0" Grid.ColumnSpan="2" Grid.Column="0" Grid.Row="9" TextWrapping="Wrap" Text="" VerticalAlignment="Top"/>
 
-            <!--<Grid x:Name="Grid"  Grid.Column="1" Grid.Row="9" Background="#FF1BA1E2">
-                <DataGrid x:Name="DataGrid" HorizontalAlignment="Left" Margin="0,10,0,0" VerticalAlignment="Top" Height="180" Width="1000" SelectionChanged="DataGrid_SelectionChanged" Loaded="DataGrid_Loaded"/>
-                <Button Content="Button" HorizontalAlignment="Left" Margin="95,235,0,0" VerticalAlignment="Top" Width="75" Height="30" Click="Button_Click"/>
-            </Grid>-->
+            </Grid>
 
-
+            <StackPanel Grid.Row="1" Orientation="Horizontal" VerticalAlignment="Bottom">
+                <Button x:Name="CreateButton" Style="{StaticResource LightGreenButton}" Content="Felvétel" Click="CreateButton_Click"/>
+                <Button x:Name="UpdateButton" Style="{StaticResource LightGreenButton}" Content="Frissítés" Click="UpdateButton_Click"/>
+                <Button x:Name="DeleteButton" Style="{StaticResource LightGreenButton}" Content="Törlés" Click="DeleteButton_Click"/>
+            </StackPanel>
 
         </Grid>
-
-        <StackPanel Grid.Row="1" Orientation="Horizontal" VerticalAlignment="Bottom">
-            <Button x:Name="CreateButton" Content="Create" Width="80" Margin="10" Click="CreateButton_Click"/>
-            <Button x:Name="UpdateButton" Content="Update" Width="80" Margin="10" Click="UpdateButton_Click"/>
-            <Button x:Name="DeleteButton" Content="Delete" Width="80" Margin="10" Click="DeleteButton_Click"/>
-        </StackPanel>
-       
-
-    </Grid>
+    </Border>
 </Window>

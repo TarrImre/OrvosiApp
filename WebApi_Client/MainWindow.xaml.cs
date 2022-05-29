@@ -1,6 +1,10 @@
-﻿using System.Linq;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Input;
+using System.Windows.Threading;
 using WebApi_Client.DataProviders;
 using WebApi_Common.Models;
 
@@ -15,7 +19,7 @@ namespace WebApi_Client
         public MainWindow()
         {
             InitializeComponent();
-
+            SetTimer();
         }
 
 
@@ -58,6 +62,50 @@ namespace WebApi_Client
         private void Refresh_Click(object sender, RoutedEventArgs e)
         {
             UpdatePeopleListBox();
+        }
+        protected void Timer_Tick(object sender, EventArgs e)
+        {
+            UpdatePeopleListBox();
+        }
+
+        private void SetTimer()
+        {
+            DispatcherTimer dispatcherTimer = new DispatcherTimer();
+            dispatcherTimer.Tick += new EventHandler(Timer_Tick);
+            dispatcherTimer.Interval = new TimeSpan(0, 0, 20);
+            dispatcherTimer.Start();
+        }
+
+
+        private void MovePanel_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            if (e.LeftButton == MouseButtonState.Pressed)
+            {
+                this.DragMove();
+            }
+        }
+
+        private void Button_Click_Close(object sender, RoutedEventArgs e)
+        {
+            System.Windows.Application.Current.Shutdown();
+        }
+        private void Button_Click_Talca(object sender, RoutedEventArgs e)
+        {
+            this.WindowState = WindowState.Minimized;
+        }
+        private void Button_Click_Logout(object sender, RoutedEventArgs e)
+        {
+            LoginDoctor win2 = new LoginDoctor();
+            win2.Show();
+            this.Close();
+        }
+        
+        private void FirstNameSearch_KeyUp(object sender, KeyEventArgs e)
+        {
+            var people = PersonDataProvider.GetPeople();
+            var filtered = people.Where(people => people.FirstName.StartsWith(FirstNameSearchTXT.Text));
+
+            DataGrid.ItemsSource = filtered;
         }
     }
 }

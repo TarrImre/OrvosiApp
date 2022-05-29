@@ -14,4 +14,8 @@
     <ProjectReference Include="..\WebApi_Common\WebApi_Common.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Styles\" />
+  </ItemGroup>
+
 </Project>
