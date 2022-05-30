@@ -112,10 +112,20 @@ namespace WebApi_Client
                 MessageBox.Show("Vezetéknév nem lehet üres!");
                 return false;
             }
+            else if (!Regex.IsMatch(FirstNameTextBox.Text, @"^[a-zA-ZöüóőúéáűíÖÜÓŐÚÉÁŰÍ](.*[a-zA-ZöüóőúéáűíÖÜÓŐÚÉÁŰÍ])?$"))
+            {
+                MessageBox.Show("Vezetéknév nem megfelelő formátum!\nNem lehet: üres, whitespace, különleges karakter. (!?_-:;#)");
+                return false;
+            }
 
             if (string.IsNullOrEmpty(LastNameTextBox.Text))
             {
                 MessageBox.Show("Keresztnév nem lehet üres!");
+                return false;
+            }
+            else if (!Regex.IsMatch(LastNameTextBox.Text, @"^[a-zA-ZöüóőúéáűíÖÜÓŐÚÉÁŰÍ](.*[a-zA-ZöüóőúéáűíÖÜÓŐÚÉÁŰÍ])?$"))
+            {
+                MessageBox.Show("Keresztnév nem megfelelő formátum!\nNem lehet: üres, whitespace, különleges karakter. (!?_-:;#)");
                 return false;
             }
 
@@ -142,9 +152,9 @@ namespace WebApi_Client
                 MessageBox.Show("TAJ szám nem lehet üres!");
                 return false;
             }
-            else if(!Regex.IsMatch(CardNumTextBox.Text, @"[0-9]{3}[ ][0-9]{3}[ ][0-9]{3}"))
+            else if(!Regex.IsMatch(CardNumTextBox.Text, @"^[0-9]{3}[ ][0-9]{3}[ ][0-9]{3}$"))
             {
-                MessageBox.Show("Nem megfelelő formátum!\nJavasolt: 000 000 000");
+                MessageBox.Show("Nem megfelelő TAJ formátum!\nJavasolt: 000 000 000");
                 return false;
             }
 

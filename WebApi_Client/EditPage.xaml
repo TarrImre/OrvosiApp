@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:WebApi_Client"
         mc:Ignorable="d"
         Title="Doktor | Módosítás"
-        Height="450"
+        Height="480"
         Width="340"
         WindowStyle="None"
         WindowStartupLocation="CenterScreen"
@@ -14,28 +14,7 @@
         Background="#F3F5F9"
         AllowsTransparency="True"
         Icon="https://toxy.hu/csharpimages/ikon.ico">
-    <Window.Resources>
-        <Style TargetType="Button"  x:Key="LightGreenButton">
-            <Setter Property="Width" Value="100"/>
-            <Setter Property="Height" Value="30"/>
-            <Setter Property="Margin" Value="6"/>
-            <Setter Property="Background" Value="#03b484"/>
-            <Setter Property="Template">
-                <Setter.Value>
-                    <ControlTemplate TargetType="{x:Type Button}">
-                        <Border Background="{TemplateBinding Background}">
-                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                        </Border>
-                    </ControlTemplate>
-                </Setter.Value>
-            </Setter>
-            <Style.Triggers>
-                <Trigger Property="IsMouseOver" Value="True">
-                    <Setter Property="Background" Value="#038f69"/>
-                </Trigger>
-            </Style.Triggers>
-        </Style>
-    </Window.Resources>
+    
     <Border Background="Transparent" BorderBrush="#044123" BorderThickness="2">
         <Grid>
 
@@ -71,37 +50,37 @@
                 </Button>-->
                 
                 <Label Grid.Column="0" Grid.Row="1" Content="Vezetéknév" Margin="10"/>
-                <TextBox x:Name="FirstNameTextBoxEDIT" Grid.Column="1" Grid.Row="1" Margin="10"/>
+                <TextBox Style="{StaticResource TextBoxStyle}" x:Name="FirstNameTextBoxEDIT" Grid.Column="1" Grid.Row="1" Margin="10"/>
 
                 <Label Grid.Column="0" Grid.Row="2" Content="Leírás" Margin="10"/>
-                <TextBox x:Name="LastNameTextBoxEDIT" Grid.Column="1" Grid.Row="2" Margin="10"/>
+                <TextBox Style="{StaticResource TextBoxStyle}" x:Name="LastNameTextBoxEDIT" Grid.Column="1" Grid.Row="2" Margin="10"/>
 
                 <Label Grid.Column="0" Grid.Row="3" Content="Születési idő:" Margin="10"/>
-                <DatePicker x:Name="DateOfBirthDatePickerEDIT" Grid.Column="1" Grid.Row="3" Margin="10"/>
+                <DatePicker x:Name="DateOfBirthDatePickerEDIT" Grid.Column="1" Grid.Row="3" Margin="16,10,18,10"/>
 
                 <Label Grid.Column="0" Grid.Row="4" Content="Város" Margin="10"/>
-                <TextBox x:Name="CityTextBoxEDIT" Grid.Column="1" Grid.Row="4" Margin="10"/>
+                <TextBox Style="{StaticResource TextBoxStyle}" x:Name="CityTextBoxEDIT" Grid.Column="1" Grid.Row="4" Margin="10"/>
 
                 <Label Grid.Column="0" Grid.Row="5" Content="Utca-házszám" Margin="10"/>
-                <TextBox x:Name="StreetHouseTextBoxEDIT" Grid.Column="1" Grid.Row="5" Margin="10"/>
+                <TextBox Style="{StaticResource TextBoxStyle}" x:Name="StreetHouseTextBoxEDIT" Grid.Column="1" Grid.Row="5" Margin="10"/>
 
                 <Label Grid.Column="0" Grid.Row="6" Content="Tajszám" Margin="10"/>
-                <TextBox x:Name="CardNumTextBoxEDIT" Grid.Column="1" Grid.Row="6" Margin="10"/>
+                <TextBox Style="{StaticResource TextBoxStyle}" x:Name="CardNumTextBoxEDIT" Grid.Column="1" Grid.Row="6" Margin="10"/>
 
                 <Label Grid.Column="0" Grid.Row="7" Content="Panasz" Margin="10"/>
-                <TextBox x:Name="ProblemTextBoxEDIT" Grid.Column="1" Grid.Row="7" Margin="10"/>
+                <TextBox Style="{StaticResource TextBoxStyle}" x:Name="ProblemTextBoxEDIT" Grid.Column="1" Grid.Row="7" Margin="10"/>
 
                 <Label Grid.Column="0" Grid.Row="8" Content="Diagnózis" Margin="10"/>
-                <TextBox x:Name="DiagnoseTextBoxEDIT" Grid.Column="1" Grid.Row="8" Margin="10"/>
+                <TextBox Style="{StaticResource TextBoxStyle}" x:Name="DiagnoseTextBoxEDIT" Grid.Column="1" Grid.Row="8" Margin="10"/>
 
 
 
             </Grid>
 
             <StackPanel Grid.Row="1" Orientation="Horizontal" VerticalAlignment="Bottom">
-                <Button x:Name="CreateButton" Style="{StaticResource LightGreenButton}" Content="Felvétel" Width="80" Margin="10" Click="CreateButton_Click"/>
-                <Button x:Name="UpdateButton" Style="{StaticResource LightGreenButton}" Content="Frissítés" Width="80" Margin="10" Click="UpdateButton_Click"/>
-                <Button x:Name="DeleteButton" Style="{StaticResource LightGreenButton}" Content="Törlés" Width="80" Margin="10" Click="DeleteButton_Click"/>
+                <Button x:Name="CreateButton" Style="{StaticResource LightGreenButton}" Content="Felvétel" Click="CreateButton_Click"/>
+                <Button x:Name="UpdateButton" Style="{StaticResource LightGreenButton}" Content="Frissítés" Click="UpdateButton_Click"/>
+                <Button x:Name="DeleteButton" Style="{StaticResource LightGreenButton}" Content="Törlés" Click="DeleteButton_Click"/>
             </StackPanel>
 
 

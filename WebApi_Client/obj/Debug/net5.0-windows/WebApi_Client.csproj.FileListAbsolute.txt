@@ -58,3 +58,4 @@ C:\Users\tarri\Documents\GitHub\OrvosiApp\WebApi_Client\obj\Debug\net5.0-windows
 C:\Users\tarri\Documents\GitHub\OrvosiApp\WebApi_Client\obj\Debug\net5.0-windows\EditPage.baml
 C:\Users\tarri\Documents\GitHub\OrvosiApp\WebApi_Client\obj\Debug\net5.0-windows\LoginDoctor.g.cs
 C:\Users\tarri\Documents\GitHub\OrvosiApp\WebApi_Client\obj\Debug\net5.0-windows\LoginDoctor.baml
+C:\Users\tarri\Documents\GitHub\OrvosiApp\WebApi_Client\obj\Debug\net5.0-windows\App.baml
