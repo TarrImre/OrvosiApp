@@ -28,3 +28,4 @@ C:\Users\tarri\Documents\GitHub\OrvosiApp\WebApi_Assist\obj\Debug\net5.0-windows
 C:\Users\tarri\Documents\GitHub\OrvosiApp\WebApi_Assist\obj\Debug\net5.0-windows\ref\WebApi_Assist.dll
 C:\Users\tarri\Documents\GitHub\OrvosiApp\WebApi_Assist\obj\Debug\net5.0-windows\LoginAssistant.g.cs
 C:\Users\tarri\Documents\GitHub\OrvosiApp\WebApi_Assist\obj\Debug\net5.0-windows\LoginAssistant.baml
+C:\Users\tarri\Documents\GitHub\OrvosiApp\WebApi_Assist\obj\Debug\net5.0-windows\App.baml

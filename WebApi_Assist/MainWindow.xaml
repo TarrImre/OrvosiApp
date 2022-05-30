@@ -12,28 +12,7 @@
         Background="#F3F5F9"
         AllowsTransparency="True"
         Icon="https://toxy.hu/csharpimages/ikon.ico">
-    <Window.Resources>
-        <Style TargetType="Button"  x:Key="LightGreenButton">
-            <Setter Property="Width" Value="100"/>
-            <Setter Property="Height" Value="30"/>
-            <Setter Property="Margin" Value="6"/>
-            <Setter Property="Background" Value="#03b484"/>
-            <Setter Property="Template">
-                <Setter.Value>
-                    <ControlTemplate TargetType="{x:Type Button}">
-                        <Border Background="{TemplateBinding Background}">
-                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                        </Border>
-                    </ControlTemplate>
-                </Setter.Value>
-            </Setter>
-            <Style.Triggers>
-                <Trigger Property="IsMouseOver" Value="True">
-                    <Setter Property="Background" Value="#038f69"/>
-                </Trigger>
-            </Style.Triggers>
-        </Style>
-    </Window.Resources>
+ 
     <Border Background="Transparent" BorderBrush="#044123" BorderThickness="2">
         <Grid>
             <Grid.RowDefinitions>
@@ -57,8 +36,8 @@
 
             <DataGrid HorizontalScrollBarVisibility="Auto" Grid.Row="1" x:Name="DataGrid" HorizontalAlignment="Center" Margin="0,0,0,0" VerticalAlignment="Top" Height="600" Width="1035" Loaded="DataGrid_Loaded" IsReadOnly="True" Background="Transparent"/>
 
-            <Button Grid.Row="2" Content="Betegfelvétel" Width="100" Style="{StaticResource LightGreenButton}" HorizontalAlignment="Right" Margin="15, 0, 15, 15" Click="AddPerson_Click"/>
-            <Button Content="Frissítés" HorizontalAlignment="Right" Style="{StaticResource LightGreenButton}" Margin="50,0,150,0" Grid.Row="2" VerticalAlignment="Top" Click="Refresh_Click"/>
+            <Button Grid.Row="2" Content="Betegfelvétel" Width="100" Style="{StaticResource LightGreenButton}" HorizontalAlignment="Right" Margin="0, 0, 20, 10" Click="AddPerson_Click"/>
+            <Button Content="Frissítés" HorizontalAlignment="Right" Style="{StaticResource LightGreenButton}" Margin="0,0,150,10" Grid.Row="2" VerticalAlignment="Top" Click="Refresh_Click"/>
 
         </Grid>
     </Border>

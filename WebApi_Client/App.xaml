@@ -4,6 +4,38 @@
              xmlns:local="clr-namespace:WebApi_Client"
              StartupUri="LoginDoctor.xaml">
     <Application.Resources>
-         
+        
+        <Style TargetType="Button"  x:Key="LightGreenButton">
+            <Setter Property="FontFamily" Value="Montserrat"/>
+            <Setter Property="Width" Value="100"/>
+            <Setter Property="Height" Value="30"/>
+            <Setter Property="Margin" Value="6"/>
+            <Setter Property="Background" Value="#03b484"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border Background="{TemplateBinding Background}">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="#038f69"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+
+        <Style TargetType="TextBox" x:Key="TextBoxStyle">
+            <Setter Property="Background" Value="White"/>
+            <Setter Property="Padding" Value="5,5,0,0"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="VerticalAlignment" Value="Bottom"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="Width" Value="150"/>
+            <Setter Property="Height" Value="30"/>
+        </Style>
+
     </Application.Resources>
 </Application>
