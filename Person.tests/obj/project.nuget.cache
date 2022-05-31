@@ -1,0 +1,27 @@
+{
+  "version": 2,
+  "dgSpecHash": "k4veK5jNfE4nPV08hzkcg0Cc2kQ7sqtpXvC+zeiuQ/BN6Tprw0SXQwQ5ez6BEh66oiZPiRR/ABvzULABqfS8zQ==",
+  "success": false,
+  "projectFilePath": "C:\\Users\\tarri\\Documents\\GitHub\\OrvosiApp\\Person.tests\\Person.tests.csproj",
+  "expectedPackageFiles": [],
+  "logs": [
+    {
+      "code": "NU1201",
+      "level": "Error",
+      "message": "Project WebApi_Assist is not compatible with net6.0 (.NETCoreApp,Version=v6.0). Project WebApi_Assist supports: net5.0-windows7.0 (.NETCoreApp,Version=v5.0)",
+      "libraryId": "WebApi_Assist",
+      "targetGraphs": [
+        "net6.0"
+      ]
+    },
+    {
+      "code": "NU1201",
+      "level": "Error",
+      "message": "Project WebApi_Client is not compatible with net6.0 (.NETCoreApp,Version=v6.0). Project WebApi_Client supports: net5.0-windows7.0 (.NETCoreApp,Version=v5.0)",
+      "libraryId": "WebApi_Client",
+      "targetGraphs": [
+        "net6.0"
+      ]
+    }
+  ]
+}

@@ -36,7 +36,15 @@
         </Button>
       
         <StackPanel Grid.Row="1" Background="White" Width="200" Margin="70,20,70,65">
-            <Image Source="https://toxy.hu/csharpimages/nursev4.png" Width="80" Margin="0,30,0,10"></Image>
+            <StackPanel.Effect>
+                <DropShadowEffect
+                  ShadowDepth="0"
+                  Direction="270"
+                  Color="Black"
+                  Opacity="0.1"
+                 BlurRadius="20"/>
+            </StackPanel.Effect>
+            <Image Source="https://toxy.hu/csharpimages/nursev5.png" Width="80" Margin="0,30,0,10"></Image>
             <TextBlock TextWrapping="Wrap" Text="Üdvözöllek!" Margin="0 0 0 0"  HorizontalAlignment="Center" FontSize="16"/>
             <TextBlock TextWrapping="Wrap" Text="Bejelentkezés, mint" Margin="0 20 0 0"  HorizontalAlignment="Center" FontSize="12"/>
             <TextBlock TextWrapping="Wrap" Text="Asszisztens" Margin="0 0 0 0"  HorizontalAlignment="Center" FontWeight="Bold" Foreground="#044123" FontSize="14"/>

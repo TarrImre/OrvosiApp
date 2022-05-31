@@ -29,3 +29,5 @@ C:\Users\tarri\Documents\GitHub\OrvosiApp\WebApi_Assist\obj\Debug\net5.0-windows
 C:\Users\tarri\Documents\GitHub\OrvosiApp\WebApi_Assist\obj\Debug\net5.0-windows\LoginAssistant.g.cs
 C:\Users\tarri\Documents\GitHub\OrvosiApp\WebApi_Assist\obj\Debug\net5.0-windows\LoginAssistant.baml
 C:\Users\tarri\Documents\GitHub\OrvosiApp\WebApi_Assist\obj\Debug\net5.0-windows\App.baml
+C:\Users\tarri\Documents\GitHub\OrvosiApp\WebApi_Assist\obj\Debug\net5.0-windows\Alert.g.cs
+C:\Users\tarri\Documents\GitHub\OrvosiApp\WebApi_Assist\obj\Debug\net5.0-windows\Alert.baml

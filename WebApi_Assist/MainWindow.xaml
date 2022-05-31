@@ -9,7 +9,7 @@
         WindowStyle="None"
         WindowStartupLocation="CenterScreen"
         ResizeMode="NoResize"
-        Background="#F3F5F9"
+        Background="#D0E1D9"
         AllowsTransparency="True"
         Icon="https://toxy.hu/csharpimages/ikon.ico">
  
@@ -34,7 +34,7 @@
                 <Image Source="https://toxy.hu/csharpimages/logout2.png"></Image>
             </Button>
 
-            <DataGrid HorizontalScrollBarVisibility="Auto" Grid.Row="1" x:Name="DataGrid" HorizontalAlignment="Center" Margin="0,0,0,0" VerticalAlignment="Top" Height="600" Width="1035" Loaded="DataGrid_Loaded" IsReadOnly="True" Background="Transparent"/>
+            <DataGrid RowStyle="{DynamicResource DataGridRowStyle1}" ColumnHeaderStyle="{DynamicResource DataGridColumnHeaderStyle1}" HorizontalScrollBarVisibility="Auto" Grid.Row="1" x:Name="DataGrid" HorizontalAlignment="Center" Margin="0,0,0,0" VerticalAlignment="Top" Height="600" Width="1035" Loaded="DataGrid_Loaded" IsReadOnly="True" Background="Transparent"/>
 
             <Button Grid.Row="2" Content="Betegfelvétel" Width="100" Style="{StaticResource LightGreenButton}" HorizontalAlignment="Right" Margin="0, 0, 20, 10" Click="AddPerson_Click"/>
             <Button Content="Frissítés" HorizontalAlignment="Right" Style="{StaticResource LightGreenButton}" Margin="0,0,150,10" Grid.Row="2" VerticalAlignment="Top" Click="Refresh_Click"/>

@@ -9,10 +9,10 @@
         WindowStyle="None"
         WindowStartupLocation="CenterScreen"
         ResizeMode="NoResize"
-        Background="#F3F5F9"
+        Background="#D0E1D9"
         AllowsTransparency="True"
         Icon="https://toxy.hu/csharpimages/ikon.ico">
- 
+
     <Border Background="Transparent" BorderBrush="#044123" BorderThickness="2">
         <Grid>
 
@@ -33,12 +33,19 @@
             <Button Grid.Row="0" Click="Button_Click_Logout" Grid.Column="0" Background="Transparent" BorderBrush="Transparent" Margin="0,0,50,0"  Width="20" Height="20" HorizontalAlignment="Right">
                 <Image Source="https://toxy.hu/csharpimages/logout2.png"></Image>
             </Button>
-            
-            <DataGrid Grid.Row="1" x:Name="DataGrid" HorizontalAlignment="Center" Margin="0,0,0,0" VerticalAlignment="Top" Height="600" Width="1035" Loaded="DataGrid_Loaded" SelectionChanged="DataGrid_SelectionChanged" IsReadOnly="True" Background="Transparent"/>
 
-            <TextBox Grid.Row="2" x:Name="FirstNameSearchTXT" Height="22" Width="100" Margin="20,0,0,0" HorizontalAlignment="Left" KeyUp="FirstNameSearch_KeyUp" />
-            <Button Grid.Row="2" Content="Betegfelvétel" HorizontalAlignment="Right" Width="100" Style="{StaticResource LightGreenButton}" Margin="0, 0, 20, 10" Click="AddPerson_Click"/>
-            <Button Content="Frissítés" HorizontalAlignment="Right" Style="{StaticResource LightGreenButton}" Margin="0,0,150,10" Grid.Row="2" VerticalAlignment="Top" Click="Refresh_Click"/>
+            <DataGrid RowStyle="{DynamicResource DataGridRowStyle1}" ColumnHeaderStyle="{DynamicResource DataGridColumnHeaderStyle1}" Grid.Row="1" x:Name="DataGrid" HorizontalAlignment="Center" VerticalAlignment="Center" Height="390" Width="1035" Loaded="DataGrid_Loaded" SelectionChanged="DataGrid_SelectionChanged" IsReadOnly="True" Background="Transparent"/>
+          
+            <Image  Grid.Row="2" Source="https://toxy.hu/csharpimages/search.png" HorizontalAlignment="Left" Width="15" Margin="10,-30,0,0"></Image>
+            <Label Grid.Row="2" Content="Vezetéknév" Margin="20,10,0,0"/>
+            <TextBox Grid.Row="2" Style="{StaticResource TextBoxStyle}" x:Name="FirstNameSearchTXT" Height="22" Width="100" Margin="100,0,0,45" Padding="2,2,0,0" HorizontalAlignment="Left" KeyUp="FirstNameSearch_KeyUp" />
+            
+            <Image  Grid.Row="2" Source="https://toxy.hu/csharpimages/search.png" HorizontalAlignment="Left" Width="15" Margin="10,35,0,0"></Image>
+            <Label Grid.Row="2" Content="Tajszám" Margin="20,45,0,0"/>
+            <TextBox Grid.Row="2" Style="{StaticResource TextBoxStyle}" x:Name="CardNumSearchTXT" Height="22" Width="100" Margin="100,0,0,10" Padding="2,2,0,0" HorizontalAlignment="Left" KeyUp="CardNumSearchTXT_KeyUp" />
+
+            <Button Grid.Row="2" Content="Betegfelvétel" HorizontalAlignment="Right" Width="100" Style="{StaticResource LightGreenButton}" Margin="0,19,15,31" Click="AddPerson_Click"/>
+            <Button Content="Frissítés" HorizontalAlignment="Right" Style="{StaticResource LightGreenButton}" Margin="0,19,150,10" Grid.Row="2" VerticalAlignment="Top" Click="Refresh_Click"/>
 
         </Grid>
     </Border>
