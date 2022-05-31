@@ -6,12 +6,12 @@
         xmlns:local="clr-namespace:WebApi_Client"
         mc:Ignorable="d"
         Title="Doktor | Módosítás"
-        Height="480"
+        Height="520"
         Width="340"
         WindowStyle="None"
         WindowStartupLocation="CenterScreen"
         ResizeMode="NoResize"
-        Background="#F3F5F9"
+        Background="#D0E1D9"
         AllowsTransparency="True"
         Icon="https://toxy.hu/csharpimages/ikon.ico">
     
@@ -25,7 +25,7 @@
 
             <Grid Grid.Row="0">
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="150"/>
+                    <ColumnDefinition Width="100"/>
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
@@ -56,7 +56,7 @@
                 <TextBox Style="{StaticResource TextBoxStyle}" x:Name="LastNameTextBoxEDIT" Grid.Column="1" Grid.Row="2" Margin="10"/>
 
                 <Label Grid.Column="0" Grid.Row="3" Content="Születési idő:" Margin="10"/>
-                <DatePicker x:Name="DateOfBirthDatePickerEDIT" Grid.Column="1" Grid.Row="3" Margin="16,10,18,10"/>
+                <DatePicker x:Name="DateOfBirthDatePickerEDIT" Grid.Column="1" Grid.Row="3" Margin="20,10,20,10"/>
 
                 <Label Grid.Column="0" Grid.Row="4" Content="Város" Margin="10"/>
                 <TextBox Style="{StaticResource TextBoxStyle}" x:Name="CityTextBoxEDIT" Grid.Column="1" Grid.Row="4" Margin="10"/>
@@ -71,7 +71,8 @@
                 <TextBox Style="{StaticResource TextBoxStyle}" x:Name="ProblemTextBoxEDIT" Grid.Column="1" Grid.Row="7" Margin="10"/>
 
                 <Label Grid.Column="0" Grid.Row="8" Content="Diagnózis" Margin="10"/>
-                <TextBox Style="{StaticResource TextBoxStyle}" x:Name="DiagnoseTextBoxEDIT" Grid.Column="1" Grid.Row="8" Margin="10"/>
+                <TextBox Style="{StaticResource TextBoxStyle}" x:Name="DiagnoseTextBoxEDIT" Grid.Column="1" Grid.Row="8" Height="90" Margin="10" TextWrapping="Wrap"/>
+      
 
 
 

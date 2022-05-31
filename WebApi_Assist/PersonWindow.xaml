@@ -11,7 +11,7 @@
         WindowStyle="None"
         WindowStartupLocation="CenterScreen"
         ResizeMode="NoResize"
-        Background="#F3F5F9"
+        Background="#D0E1D9"
         AllowsTransparency="True"
         Icon="https://toxy.hu/csharpimages/ikon.ico">
 
@@ -24,7 +24,7 @@
 
             <Grid Grid.Row="0">
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="150"/>
+                    <ColumnDefinition Width="100"/>
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>

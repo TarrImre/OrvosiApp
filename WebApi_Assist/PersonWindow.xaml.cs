@@ -4,6 +4,7 @@ using System.Collections.ObjectModel;
 using System.Text.RegularExpressions;
 using System.Windows;
 using System.Windows.Input;
+using WebApi_Assist;
 using WebApi_Client.DataProviders;
 using WebApi_Common.Models;
 
@@ -102,60 +103,65 @@ namespace WebApi_Client
 
         private bool ValidatePerson()
         {
+            Alert win2 = new Alert();
+            win2.AlertTEXT.Text = "Sikeres felvétel!";
+            win2.Show();
             if (string.IsNullOrEmpty(FirstNameTextBox.Text))
             {
-                MessageBox.Show("Vezetéknév nem lehet üres!");
+                win2.AlertTEXT.Text = "Vezetéknév nem lehet üres!";
+
+                //MessageBox.Show("Vezetéknév nem lehet üres!");
                 return false;
             }
             else if (!Regex.IsMatch(FirstNameTextBox.Text, @"^[a-zA-ZöüóőúéáűíÖÜÓŐÚÉÁŰÍ](.*[a-zA-ZöüóőúéáűíÖÜÓŐÚÉÁŰÍ])?$"))
             {
-                MessageBox.Show("Vezetéknév nem megfelelő formátum!\nNem lehet: üres, whitespace, különleges karakter. (!?_-:;#)");
+                win2.AlertTEXT.Text = "Vezetéknév nem megfelelő formátum!\nNem lehet: üres, whitespace, különleges karakter. (!?_-:;#)";
                 return false;
             }
 
             if (string.IsNullOrEmpty(LastNameTextBox.Text))
             {
-                MessageBox.Show("Keresztnév nem lehet üres!");
+                win2.AlertTEXT.Text = "Keresztnév nem lehet üres!";
                 return false;
             }
             else if (!Regex.IsMatch(LastNameTextBox.Text, @"^[a-zA-ZöüóőúéáűíÖÜÓŐÚÉÁŰÍ](.*[a-zA-ZöüóőúéáűíÖÜÓŐÚÉÁŰÍ])?$"))
             {
-                MessageBox.Show("Keresztnév nem megfelelő formátum!\nNem lehet: üres, whitespace, különleges karakter. (!?_-:;#)");
+                win2.AlertTEXT.Text = "Keresztnév nem megfelelő formátum!\nNem lehet: üres, whitespace, különleges karakter. (!?_-:;#)";
                 return false;
             }
 
             if (!DateOfBirthDatePicker.SelectedDate.HasValue)
             {
-                MessageBox.Show("Válassza ki a születés dátumát!");
+                win2.AlertTEXT.Text = "Válassza ki a születés dátumát!";
                 return false;
             }
 
             if (string.IsNullOrEmpty(CityTextBox.Text))
             {
-                MessageBox.Show("Város mező nem lehet üres!");
+                win2.AlertTEXT.Text = "Város mező nem lehet üres!";
                 return false;
             }
 
             if (string.IsNullOrEmpty(StreetHouseTextBox.Text))
             {
-                MessageBox.Show("Utca-házszám nem lehet üres!");
+                win2.AlertTEXT.Text = "Utca-házszám nem lehet üres!";
                 return false;
             }
 
             if (string.IsNullOrEmpty(CardNumTextBox.Text))
             {
-                MessageBox.Show("TAJ szám nem lehet üres!");
+                win2.AlertTEXT.Text = "TAJ szám nem lehet üres!";
                 return false;
             }
             else if (!Regex.IsMatch(CardNumTextBox.Text, @"^[0-9]{3}[ ][0-9]{3}[ ][0-9]{3}$"))
             {
-                MessageBox.Show("Nem megfelelő TAJ formátum!\nJavasolt: 000 000 000");
+                win2.AlertTEXT.Text = "Nem megfelelő TAJ formátum!\nJavasolt: 000 000 000";
                 return false;
             }
 
             if (string.IsNullOrEmpty(ProblemTextBox.Text))
             {
-                MessageBox.Show("Probléma nem lehet üres!");
+                win2.AlertTEXT.Text = "Probléma nem lehet üres!";
                 return false;
             }
 

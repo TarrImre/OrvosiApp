@@ -34,6 +34,7 @@ namespace WebApi_Client
 
         private void DataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+           
             var selectedPerson = DataGrid.SelectedItem as Person;
 
             if (selectedPerson != null)
@@ -104,7 +105,13 @@ namespace WebApi_Client
         {
             var people = PersonDataProvider.GetPeople();
             var filtered = people.Where(people => people.FirstName.StartsWith(FirstNameSearchTXT.Text));
+            DataGrid.ItemsSource = filtered;
+        }
 
+        private void CardNumSearchTXT_KeyUp(object sender, KeyEventArgs e)
+        {
+            var people = PersonDataProvider.GetPeople();
+            var filtered = people.Where(people => people.Cardnum.StartsWith(CardNumSearchTXT.Text));
             DataGrid.ItemsSource = filtered;
         }
     }

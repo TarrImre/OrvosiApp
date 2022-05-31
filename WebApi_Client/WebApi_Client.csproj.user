@@ -2,6 +2,14 @@
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup />
   <ItemGroup>
+    <Compile Update="Alert.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="Alert.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="EditPage.xaml">
       <SubType>Designer</SubType>
     </Page>

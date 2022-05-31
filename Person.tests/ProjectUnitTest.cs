@@ -5,10 +5,31 @@ namespace Person.tests
     [TestClass]
     public class ProjectUnitTest
     {
-        [DataRow()]
-        [DataTestMethod]
-        public void Name_WithValidArgument_UpdateName() {
-            var account = new ValidatePerson;
+       
+        [TestMethod]
+
+        public void TestMethod()
+
+        {
+
+            //Arrange test
+
+            testClass objtest = new testClass();
+
+            Boolean result;
+
+
+
+            //Act test
+
+            result = objtest.testFunction();
+
+
+
+            //Assert test
+
+            Assert.AreEqual(true, result);
+
 
 
         }
