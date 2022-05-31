@@ -141,7 +141,7 @@ namespace WebApi_Client {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/WebApi_Assist;V1.0.0.0;component/personwindow.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/WebApi_Assist;component/personwindow.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\PersonWindow.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

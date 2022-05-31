@@ -34,7 +34,7 @@
                 <Image Source="https://toxy.hu/csharpimages/logout2.png"></Image>
             </Button>
             
-            <DataGrid Grid.Row="1" x:Name="DataGrid" HorizontalAlignment="Center" Margin="0,0,0,0" VerticalAlignment="Top" Height="600" Width="1035" Loaded="DataGrid_Loaded" SelectionChanged="DataGrid_SelectionChanged" IsReadOnly="True" Background="Transparent"/>
+            <DataGrid RowStyle="{DynamicResource DataGridRowStyle1}" ColumnHeaderStyle="{DynamicResource DataGridColumnHeaderStyle1}" Grid.Row="1" x:Name="DataGrid" HorizontalAlignment="Center" Margin="0,0,0,0" VerticalAlignment="Top" Height="600" Width="1035" Loaded="DataGrid_Loaded" SelectionChanged="DataGrid_SelectionChanged" IsReadOnly="True" Background="Transparent"/>
 
             <TextBox Grid.Row="2" x:Name="FirstNameSearchTXT" Height="22" Width="100" Margin="20,0,0,0" HorizontalAlignment="Left" KeyUp="FirstNameSearch_KeyUp" />
             <Button Grid.Row="2" Content="Betegfelvétel" HorizontalAlignment="Right" Width="100" Style="{StaticResource LightGreenButton}" Margin="0, 0, 20, 10" Click="AddPerson_Click"/>
