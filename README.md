@@ -10,5 +10,6 @@ az egészségügyi intézményekben.
 0.1.1
 
 ### Fejlesztő
-Tarr Imre --- tarr.imre2630@gmail.com 
+Tarr Imre - - - tarr.imre2630@gmail.com 
+Végvári Richárd - - - ricsi722@gmail.com
 
