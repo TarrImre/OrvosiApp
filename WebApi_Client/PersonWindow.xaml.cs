@@ -37,16 +37,13 @@ namespace WebApi_Client
 
                 AddedTimeText.Visibility = Visibility.Collapsed;
                 CreateButton.Visibility = Visibility.Collapsed;
-                UpdateButton.Visibility = Visibility.Visible;
-                DeleteButton.Visibility = Visibility.Visible;
+
             }
             else
             {
                 _person = new Person();
 
                 CreateButton.Visibility = Visibility.Visible;
-                UpdateButton.Visibility = Visibility.Collapsed;
-                DeleteButton.Visibility = Visibility.Collapsed;
             }
         }
 
@@ -74,27 +71,8 @@ namespace WebApi_Client
 
 
 
-        private void UpdateButton_Click(object sender, RoutedEventArgs e)
-        {
-            if (ValidatePerson())
-            {
-                _person.FirstName = FirstNameTextBox.Text;
-                _person.LastName = LastNameTextBox.Text;
-                _person.DateOfBirth = DateOfBirthDatePicker.SelectedDate.Value;
-                _person.City = CityTextBox.Text;
-                _person.StreetHouse = StreetHouseTextBox.Text;
-                _person.Cardnum = CardNumTextBox.Text;
-                _person.Problem = ProblemTextBox.Text;
-                _person.Diagnose = DiagnoseTextBox.Text;
 
-                PersonDataProvider.UpdatePerson(_person);
-
-                DialogResult = true;
-                Close();
-            }
-        }
-
-        private void DeleteButton_Click(object sender, RoutedEventArgs e)
+      /*  private void DeleteButton_Click(object sender, RoutedEventArgs e)
         {
             if (MessageBox.Show("Biztosan akarod törölni?", "Kérdés", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
             {
@@ -103,7 +81,7 @@ namespace WebApi_Client
                 DialogResult = true;
                 Close();
             }
-        }
+        }*/
 
 
         private bool ValidatePerson()
@@ -150,6 +128,11 @@ namespace WebApi_Client
             if (string.IsNullOrEmpty(StreetHouseTextBox.Text))
             {
                 win2.AlertTEXT.Text = "Utca-házszám nem lehet üres!";
+                return false;
+            }
+            else if (!Regex.IsMatch(StreetHouseTextBox.Text, @"^([^\d]*[^\d\s]) *(\d.*)$"))
+            {
+                win2.AlertTEXT.Text = "Nem megfelelő utca-házszám formátum\n(utcanév szám)!";
                 return false;
             }
 

@@ -94,7 +94,13 @@ namespace WebApi_Client
 
         private void DeleteButton_Click(object sender, RoutedEventArgs e)
         {
-            if (MessageBox.Show("Biztosan akarod törölni?", "Question", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
+            MessageBoxResult msgBoxResult = MessageBox.Show("Biztosan törlöd?",
+                "Igen",
+                MessageBoxButton.YesNo,
+                MessageBoxImage.Warning,
+                MessageBoxResult.No
+                );
+            if (msgBoxResult == MessageBoxResult.Yes)
             {
                 PersonDataProvider.DeletePerson(_person.Id);
 
@@ -147,6 +153,11 @@ namespace WebApi_Client
             if (string.IsNullOrEmpty(StreetHouseTextBoxEDIT.Text))
             {
                 win2.AlertTEXT.Text = "Utca-házszám nem lehet üres!";
+                return false;
+            }
+            else if (!Regex.IsMatch(StreetHouseTextBoxEDIT.Text, @"^([^\d]*[^\d\s]) *(\d.*)$"))
+            {
+                win2.AlertTEXT.Text = "Nem megfelelő utca-házszám formátum\n(utcanév szám)!";
                 return false;
             }
 

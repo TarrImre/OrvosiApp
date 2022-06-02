@@ -43,7 +43,7 @@
                     <TextBlock TextWrapping="Wrap" Text="Betegfelvétel" Margin="10,2,0,0" FontWeight="Bold" Foreground="#03b484"/>
                 </StackPanel>
                 <Button Click="Button_Click_Close" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Background="Transparent" BorderBrush="Transparent" Margin="0,0,5,0"  Width="20" Height="20" HorizontalAlignment="Right">
-                    <Image Source="https://toxy.hu/csharpimages/closelight.png"></Image>
+                    <Image Source="/closelight.png"></Image>
                 </Button>
                <!-- <Button Click="Button_Click_Talca" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Background="Transparent" BorderBrush="Transparent" Margin="0,0,25,0"  Width="20" Height="20" HorizontalAlignment="Right">
                     <Image Source="https://toxy.hu/csharpimages/talcalight.png"></Image>

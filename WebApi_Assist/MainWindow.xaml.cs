@@ -20,6 +20,8 @@ namespace WebApi_Assist
         {
             InitializeComponent();
             SetTimer();
+            DataGrid.Visibility = Visibility.Collapsed;
+            HideButton.Visibility = Visibility.Collapsed;
         }
 
 
@@ -75,7 +77,7 @@ namespace WebApi_Assist
         {
             DispatcherTimer dispatcherTimer = new DispatcherTimer();
             dispatcherTimer.Tick += new EventHandler(Timer_Tick);
-            dispatcherTimer.Interval = new TimeSpan(0, 0, 20);
+            dispatcherTimer.Interval = new TimeSpan(0, 0, 60);
             dispatcherTimer.Start();
         }
 
@@ -84,6 +86,20 @@ namespace WebApi_Assist
             LoginAssistant win2 = new LoginAssistant();
             win2.Show();
             this.Close();
+        }
+
+        private void Hide_Click(object sender, RoutedEventArgs e)
+        {
+            DataGrid.Visibility= Visibility.Collapsed;
+            HideButton.Visibility = Visibility.Collapsed;
+            ShowButton.Visibility= Visibility.Visible;
+
+        }
+        private void Show_Click(object sender, RoutedEventArgs e)
+        {
+            DataGrid.Visibility = Visibility.Visible;
+            HideButton.Visibility = Visibility.Visible;
+            ShowButton.Visibility = Visibility.Collapsed;
         }
     }
 }
