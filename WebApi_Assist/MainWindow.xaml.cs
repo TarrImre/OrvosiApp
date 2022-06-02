@@ -22,6 +22,7 @@ namespace WebApi_Assist
             SetTimer();
             DataGrid.Visibility = Visibility.Collapsed;
             HideButton.Visibility = Visibility.Collapsed;
+            BottomBarHided.Visibility = Visibility.Collapsed;
         }
 
 
@@ -93,13 +94,14 @@ namespace WebApi_Assist
             DataGrid.Visibility= Visibility.Collapsed;
             HideButton.Visibility = Visibility.Collapsed;
             ShowButton.Visibility= Visibility.Visible;
-
+            BottomBarHided.Visibility = Visibility.Collapsed;
         }
         private void Show_Click(object sender, RoutedEventArgs e)
         {
             DataGrid.Visibility = Visibility.Visible;
             HideButton.Visibility = Visibility.Visible;
             ShowButton.Visibility = Visibility.Collapsed;
+            BottomBarHided.Visibility = Visibility.Visible;
         }
     }
 }

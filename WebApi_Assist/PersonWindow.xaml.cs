@@ -16,6 +16,9 @@ namespace WebApi_Client
     public partial class PersonWindow : Window
     {
         private readonly Person _person;
+        public static Regex regexName = new Regex(@"^[a-zA-ZöüóőúéáűíÖÜÓŐÚÉÁŰÍ](.*[a-zA-ZöüóőúéáűíÖÜÓŐÚÉÁŰÍ])?$");
+        public static Regex regexCardNum = new Regex(@"^[0-9]{3}[ ][0-9]{3}[ ][0-9]{3}$");
+        public static Regex regexStreetHouse = new Regex(@"^([^\d]*[^\d\s]) *(\d.*)$");
         public PersonWindow(Person person)
         {
             InitializeComponent();
@@ -112,7 +115,7 @@ namespace WebApi_Client
                 //MessageBox.Show("Vezetéknév nem lehet üres!");
                 return false;
             }
-            else if (!Regex.IsMatch(FirstNameTextBox.Text, @"^[a-zA-ZöüóőúéáűíÖÜÓŐÚÉÁŰÍ](.*[a-zA-ZöüóőúéáűíÖÜÓŐÚÉÁŰÍ])?$"))
+            else if (!regexName.IsMatch(FirstNameTextBox.Text))
             {
                 win2.AlertTEXT.Text = "Vezetéknév nem megfelelő formátum!\nNem lehet: üres, whitespace, különleges karakter. (!?_-:;#)";
                 return false;
@@ -123,7 +126,8 @@ namespace WebApi_Client
                 win2.AlertTEXT.Text = "Keresztnév nem lehet üres!";
                 return false;
             }
-            else if (!Regex.IsMatch(LastNameTextBox.Text, @"^[a-zA-ZöüóőúéáűíÖÜÓŐÚÉÁŰÍ](.*[a-zA-ZöüóőúéáűíÖÜÓŐÚÉÁŰÍ])?$"))
+
+            else if (!regexName.IsMatch(LastNameTextBox.Text))
             {
                 win2.AlertTEXT.Text = "Keresztnév nem megfelelő formátum!\nNem lehet: üres, whitespace, különleges karakter. (!?_-:;#)";
                 return false;
@@ -146,7 +150,7 @@ namespace WebApi_Client
                 win2.AlertTEXT.Text = "Utca-házszám nem lehet üres!";
                 return false;
             }
-            else if (!Regex.IsMatch(StreetHouseTextBox.Text, @"^([^\d]*[^\d\s]) *(\d.*)$")) {
+            else if (!regexStreetHouse.IsMatch(StreetHouseTextBox.Text)) {
                 win2.AlertTEXT.Text = "Nem megfelelő utca-házszám formátum\n(utcanév szám)!";
                 return false;
             }
@@ -156,7 +160,7 @@ namespace WebApi_Client
                 win2.AlertTEXT.Text = "TAJ szám nem lehet üres!";
                 return false;
             }
-            else if (!Regex.IsMatch(CardNumTextBox.Text, @"^[0-9]{3}[ ][0-9]{3}[ ][0-9]{3}$"))
+            else if (!regexCardNum.IsMatch(CardNumTextBox.Text))
             {
                 win2.AlertTEXT.Text = "Nem megfelelő TAJ formátum!\nJavasolt: 000 000 000";
                 return false;

@@ -35,17 +35,18 @@
             </Button>
 
             <DataGrid Grid.Row="1" x:Name="DataGrid" HorizontalAlignment="Center" VerticalAlignment="Center" Height="416" Width="1035" Loaded="DataGrid_Loaded" SelectionChanged="DataGrid_SelectionChanged" IsReadOnly="True" Background="Transparent" BorderBrush="Transparent" HorizontalGridLinesBrush="#FF044123" VerticalGridLinesBrush="Transparent"/>
-
-            <Image  Grid.Row="2" Source="/search.png" HorizontalAlignment="Left" Width="15" Margin="10,15,0,0"></Image>
-            <Label Grid.Row="2" Content="Tajszám" Margin="20,25,0,0"/>
-            <TextBox Grid.Row="2" Style="{StaticResource TextBoxStyle}" x:Name="CardNumSearchTXT" Height="22" Width="100" Margin="80,0,0,10" Padding="2,2,0,0" HorizontalAlignment="Left" KeyUp="CardNumSearchTXT_KeyUp" />
-
-            <Button Grid.Row="2" Content="Betegfelvétel" HorizontalAlignment="Right" Width="100" Style="{StaticResource LightGreenButton}" Margin="0,19,15,10" Click="AddPerson_Click"/>
-            <Button Content="Frissítés" HorizontalAlignment="Right" Style="{StaticResource LightGreenButton}" Margin="0,19,150,10" Grid.Row="2" VerticalAlignment="Top" Click="Refresh_Click"/>
-            <Button x:Name="HideButton"  HorizontalAlignment="center" Background="Transparent" BorderBrush="Transparent" Margin="0,20,0,0" Width="32" Grid.Row="2" VerticalAlignment="Top" Click="Hide_Click">
+           
+            <StackPanel Grid.Row="2" x:Name="BottomBarHided">
+                <Image Source="/search.png"  HorizontalAlignment="Left" Width="15" Margin="10,20,0,0"></Image>
+                <Label Content="Tajszám"  Margin="25,-20,0,0"/>
+                <TextBox Style="{StaticResource TextBoxStyle}" Margin="80,-30,0,0" x:Name="CardNumSearchTXT" Height="22" Width="100" Padding="2,2,0,0" HorizontalAlignment="Left" KeyUp="CardNumSearchTXT_KeyUp" />
+                <Button Content="Betegfelvétel" Margin="0,-30,20,0" HorizontalAlignment="Right" Width="100" Style="{StaticResource LightGreenButton}" Click="AddPerson_Click"/>
+                <Button Content="Frissítés" Margin="0,-30,160,0" HorizontalAlignment="Right" Style="{StaticResource LightGreenButton}" VerticalAlignment="Top" Click="Refresh_Click"/>
+            </StackPanel>
+            <Button Grid.Row="2" x:Name="HideButton"  HorizontalAlignment="center" Margin="0,0,0,0" VerticalAlignment="Center"  Background="Transparent" BorderBrush="Transparent"  Width="32" Click="Hide_Click">
                 <Image Source="/show.png"></Image>
             </Button>
-            <Button x:Name="ShowButton" HorizontalAlignment="center" Background="Transparent" BorderBrush="Transparent" Margin="0,20,0,0" Width="32"  Grid.Row="2" VerticalAlignment="Top" Click="Show_Click">
+            <Button Grid.Row="2" x:Name="ShowButton" HorizontalAlignment="center" Margin="0,14,0,0" Background="Transparent" BorderBrush="Transparent"  Width="32" VerticalAlignment="Top" Click="Show_Click">
                 <Image Source="/hide.png"></Image>
             </Button>
         </Grid>
