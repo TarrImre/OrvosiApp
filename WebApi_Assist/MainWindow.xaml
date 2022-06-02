@@ -12,7 +12,7 @@
         Background="#D0E1D9"
         AllowsTransparency="True"
         Icon="https://toxy.hu/csharpimages/ikon.ico">
- 
+
     <Border Background="Transparent" BorderBrush="#044123" BorderThickness="2">
         <Grid>
             <Grid.RowDefinitions>
@@ -25,20 +25,24 @@
                 <TextBlock TextWrapping="Wrap" Text="Asszisztens pult" Margin="15,5,0,0" FontWeight="Bold" Foreground="#03b484"/>
             </StackPanel>
             <Button Grid.Row="0" Click="Button_Click_Close" Grid.Column="0" Background="Transparent" BorderBrush="Transparent" Margin="0,0,5,0"  Width="20" Height="20" HorizontalAlignment="Right">
-                <Image Source="https://toxy.hu/csharpimages/closelight.png"></Image>
+                <Image Source="/closelight.png"></Image>
             </Button>
             <Button Grid.Row="0" Click="Button_Click_Talca" Grid.Column="0" Background="Transparent" BorderBrush="Transparent" Margin="0,0,25,0"  Width="20" Height="20" HorizontalAlignment="Right">
-                <Image Source="https://toxy.hu/csharpimages/talcalight.png"></Image>
+                <Image Source="/talcalight.png"></Image>
             </Button>
             <Button Grid.Row="0" Click="Button_Click_Logout" Grid.Column="0" Background="Transparent" BorderBrush="Transparent" Margin="0,0,50,0"  Width="20" Height="20" HorizontalAlignment="Right">
-                <Image Source="https://toxy.hu/csharpimages/logout2.png"></Image>
+                <Image Source="/logoutv2.png"></Image>
             </Button>
 
-            <DataGrid RowStyle="{DynamicResource DataGridRowStyle1}" ColumnHeaderStyle="{DynamicResource DataGridColumnHeaderStyle1}" HorizontalScrollBarVisibility="Auto" Grid.Row="1" x:Name="DataGrid" HorizontalAlignment="Center" Margin="0,0,0,0" VerticalAlignment="Top" Height="600" Width="1035" Loaded="DataGrid_Loaded" IsReadOnly="True" Background="Transparent"/>
-
+            <DataGrid HorizontalScrollBarVisibility="Auto" Grid.Row="1" x:Name="DataGrid" HorizontalAlignment="Center" VerticalAlignment="Center" Height="430" Width="1035" Loaded="DataGrid_Loaded" IsReadOnly="True" Background="Transparent" BorderBrush="Transparent" HorizontalGridLinesBrush="#FF044123" VerticalGridLinesBrush="Transparent"/>
             <Button Grid.Row="2" Content="Betegfelvétel" Width="100" Style="{StaticResource LightGreenButton}" HorizontalAlignment="Right" Margin="0, 0, 20, 10" Click="AddPerson_Click"/>
             <Button Content="Frissítés" HorizontalAlignment="Right" Style="{StaticResource LightGreenButton}" Margin="0,0,150,10" Grid.Row="2" VerticalAlignment="Top" Click="Refresh_Click"/>
-
+            <Button x:Name="HideButton" HorizontalAlignment="center" Background="Transparent" BorderBrush="Transparent" Width="32" Grid.Row="2" VerticalAlignment="Top" Click="Hide_Click">
+                <Image Source="/show.png"></Image>
+            </Button>
+            <Button x:Name="ShowButton" HorizontalAlignment="center" Background="Transparent" BorderBrush="Transparent" Width="32"  Grid.Row="2" VerticalAlignment="Top" Click="Show_Click">
+                <Image Source="/hide.png"></Image>
+            </Button>
         </Grid>
     </Border>
 </Window>

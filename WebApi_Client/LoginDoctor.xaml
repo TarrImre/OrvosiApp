@@ -28,10 +28,10 @@
         <Image Grid.Row="1" Source="https://toxy.hu/csharpimages/shapev2.png" Margin="0,-115,0,0"></Image>
         <StackPanel Grid.Row="0" Grid.Column="0" Background="Transparent" x:Name="MovePanel" MouseDown="MovePanel_MouseDown"/>
         <Button Grid.Row="0" Click="Button_Click_Close" Grid.Column="0" Background="Transparent" BorderBrush="Transparent" Margin="0,0,5,0"  Width="20" Height="20" HorizontalAlignment="Right">
-            <Image Source="https://toxy.hu/csharpimages/close.png"></Image>
+            <Image Source="/close.png"></Image>
         </Button>
         <Button Grid.Row="0" Click="Button_Click_Talca" Grid.Column="0" Background="Transparent" BorderBrush="Transparent" Margin="0,0,25,0"  Width="20" Height="20" HorizontalAlignment="Right">
-            <Image Source="https://toxy.hu/csharpimages/talca.png"></Image>
+            <Image Source="/talca.png"></Image>
         </Button>
       
         <StackPanel Grid.Row="1" Background="White" Width="200" Margin="70,20,70,65">
@@ -43,7 +43,7 @@
                   Opacity="0.1"
                  BlurRadius="20"/>
             </StackPanel.Effect>
-            <Image Source="https://toxy.hu/csharpimages/doctorv2.png" Width="80" Margin="0,30,0,10"></Image>
+            <Image Source="/doctorv2.png" Width="80" Margin="0,30,0,10"></Image>
             <TextBlock TextWrapping="Wrap" Text="Üdvözöllek!" Margin="0 0 0 0"  HorizontalAlignment="Center" FontSize="16"/>
             <TextBlock TextWrapping="Wrap" Text="Bejelentkezés, mint" Margin="0 20 0 0"  HorizontalAlignment="Center" FontSize="12"/>
             <TextBlock TextWrapping="Wrap" Text="Doktor" Margin="0 0 0 0"  HorizontalAlignment="Center" FontWeight="Bold" Foreground="#044123" FontSize="14"/>

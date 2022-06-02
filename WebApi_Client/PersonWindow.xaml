@@ -79,8 +79,6 @@
 
             <StackPanel Grid.Row="1" Orientation="Horizontal" VerticalAlignment="Bottom">
                 <Button x:Name="CreateButton" Style="{StaticResource LightGreenButton}" Content="Felvétel" Click="CreateButton_Click"/>
-                <Button x:Name="UpdateButton" Style="{StaticResource LightGreenButton}" Content="Frissítés" Click="UpdateButton_Click"/>
-                <Button x:Name="DeleteButton" Style="{StaticResource LightGreenButton}" Content="Törlés" Click="DeleteButton_Click"/>
             </StackPanel>
 
         </Grid>

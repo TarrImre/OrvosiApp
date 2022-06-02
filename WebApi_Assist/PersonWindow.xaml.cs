@@ -46,7 +46,6 @@ namespace WebApi_Client
             }
         }
 
-
         private void CreateButton_Click(object sender, RoutedEventArgs e)
         {
             if (ValidatePerson())
@@ -101,7 +100,7 @@ namespace WebApi_Client
             }
         }
 
-        private bool ValidatePerson()
+        public bool ValidatePerson()
         {
             Alert win2 = new Alert();
             win2.AlertTEXT.Text = "Sikeres felvétel!";
@@ -145,6 +144,10 @@ namespace WebApi_Client
             if (string.IsNullOrEmpty(StreetHouseTextBox.Text))
             {
                 win2.AlertTEXT.Text = "Utca-házszám nem lehet üres!";
+                return false;
+            }
+            else if (!Regex.IsMatch(StreetHouseTextBox.Text, @"^([^\d]*[^\d\s]) *(\d.*)$")) {
+                win2.AlertTEXT.Text = "Nem megfelelő utca-házszám formátum\n(utcanév szám)!";
                 return false;
             }
 

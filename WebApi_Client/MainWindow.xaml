@@ -19,34 +19,35 @@
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="*"/>
-                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="60"/>
             </Grid.RowDefinitions>
             <StackPanel Grid.Row="0" Grid.Column="0" Background="#044123" x:Name="MovePanel" MouseDown="MovePanel_MouseDown">
                 <TextBlock TextWrapping="Wrap" Text="Doktor pult" Margin="15,2,0,0" FontWeight="Bold" Foreground="#03b484"/>
             </StackPanel>
             <Button Grid.Row="0" Click="Button_Click_Close" Grid.Column="0" Background="Transparent" BorderBrush="Transparent" Margin="0,0,5,0"  Width="20" Height="20" HorizontalAlignment="Right">
-                <Image Source="https://toxy.hu/csharpimages/closelight.png"></Image>
+                <Image Source="/closelight.png"></Image>
             </Button>
             <Button Grid.Row="0" Click="Button_Click_Talca" Grid.Column="0" Background="Transparent" BorderBrush="Transparent" Margin="0,0,25,0"  Width="20" Height="20" HorizontalAlignment="Right">
-                <Image Source="https://toxy.hu/csharpimages/talcalight.png"></Image>
+                <Image Source="/talcalight.png"></Image>
             </Button>
             <Button Grid.Row="0" Click="Button_Click_Logout" Grid.Column="0" Background="Transparent" BorderBrush="Transparent" Margin="0,0,50,0"  Width="20" Height="20" HorizontalAlignment="Right">
-                <Image Source="https://toxy.hu/csharpimages/logout2.png"></Image>
+                <Image Source="/logoutv2.png"></Image>
             </Button>
 
-            <DataGrid RowStyle="{DynamicResource DataGridRowStyle1}" ColumnHeaderStyle="{DynamicResource DataGridColumnHeaderStyle1}" Grid.Row="1" x:Name="DataGrid" HorizontalAlignment="Center" VerticalAlignment="Center" Height="390" Width="1035" Loaded="DataGrid_Loaded" SelectionChanged="DataGrid_SelectionChanged" IsReadOnly="True" Background="Transparent"/>
-          
-            <Image  Grid.Row="2" Source="https://toxy.hu/csharpimages/search.png" HorizontalAlignment="Left" Width="15" Margin="10,-30,0,0"></Image>
-            <Label Grid.Row="2" Content="Vezetéknév" Margin="20,10,0,0"/>
-            <TextBox Grid.Row="2" Style="{StaticResource TextBoxStyle}" x:Name="FirstNameSearchTXT" Height="22" Width="100" Margin="100,0,0,45" Padding="2,2,0,0" HorizontalAlignment="Left" KeyUp="FirstNameSearch_KeyUp" />
-            
-            <Image  Grid.Row="2" Source="https://toxy.hu/csharpimages/search.png" HorizontalAlignment="Left" Width="15" Margin="10,35,0,0"></Image>
-            <Label Grid.Row="2" Content="Tajszám" Margin="20,45,0,0"/>
-            <TextBox Grid.Row="2" Style="{StaticResource TextBoxStyle}" x:Name="CardNumSearchTXT" Height="22" Width="100" Margin="100,0,0,10" Padding="2,2,0,0" HorizontalAlignment="Left" KeyUp="CardNumSearchTXT_KeyUp" />
+            <DataGrid Grid.Row="1" x:Name="DataGrid" HorizontalAlignment="Center" VerticalAlignment="Center" Height="416" Width="1035" Loaded="DataGrid_Loaded" SelectionChanged="DataGrid_SelectionChanged" IsReadOnly="True" Background="Transparent" BorderBrush="Transparent" HorizontalGridLinesBrush="#FF044123" VerticalGridLinesBrush="Transparent"/>
 
-            <Button Grid.Row="2" Content="Betegfelvétel" HorizontalAlignment="Right" Width="100" Style="{StaticResource LightGreenButton}" Margin="0,19,15,31" Click="AddPerson_Click"/>
+            <Image  Grid.Row="2" Source="/search.png" HorizontalAlignment="Left" Width="15" Margin="10,15,0,0"></Image>
+            <Label Grid.Row="2" Content="Tajszám" Margin="20,25,0,0"/>
+            <TextBox Grid.Row="2" Style="{StaticResource TextBoxStyle}" x:Name="CardNumSearchTXT" Height="22" Width="100" Margin="80,0,0,10" Padding="2,2,0,0" HorizontalAlignment="Left" KeyUp="CardNumSearchTXT_KeyUp" />
+
+            <Button Grid.Row="2" Content="Betegfelvétel" HorizontalAlignment="Right" Width="100" Style="{StaticResource LightGreenButton}" Margin="0,19,15,10" Click="AddPerson_Click"/>
             <Button Content="Frissítés" HorizontalAlignment="Right" Style="{StaticResource LightGreenButton}" Margin="0,19,150,10" Grid.Row="2" VerticalAlignment="Top" Click="Refresh_Click"/>
-
+            <Button x:Name="HideButton"  HorizontalAlignment="center" Background="Transparent" BorderBrush="Transparent" Margin="0,20,0,0" Width="32" Grid.Row="2" VerticalAlignment="Top" Click="Hide_Click">
+                <Image Source="/show.png"></Image>
+            </Button>
+            <Button x:Name="ShowButton" HorizontalAlignment="center" Background="Transparent" BorderBrush="Transparent" Margin="0,20,0,0" Width="32"  Grid.Row="2" VerticalAlignment="Top" Click="Show_Click">
+                <Image Source="/hide.png"></Image>
+            </Button>
         </Grid>
     </Border>
 </Window>

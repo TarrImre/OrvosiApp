@@ -20,6 +20,8 @@ namespace WebApi_Client
         {
             InitializeComponent();
             SetTimer();
+            DataGrid.Visibility = Visibility.Collapsed;
+            HideButton.Visibility = Visibility.Collapsed;
         }
 
 
@@ -53,6 +55,7 @@ namespace WebApi_Client
         {
             var people = PersonDataProvider.GetPeople().ToList();
             DataGrid.ItemsSource = people;
+
         }
 
         private void DataGrid_Loaded(object sender, RoutedEventArgs e)
@@ -73,7 +76,7 @@ namespace WebApi_Client
         {
             DispatcherTimer dispatcherTimer = new DispatcherTimer();
             dispatcherTimer.Tick += new EventHandler(Timer_Tick);
-            dispatcherTimer.Interval = new TimeSpan(0, 0, 20);
+            dispatcherTimer.Interval = new TimeSpan(0, 0, 60);
             dispatcherTimer.Start();
         }
 
@@ -101,18 +104,24 @@ namespace WebApi_Client
             this.Close();
         }
         
-        private void FirstNameSearch_KeyUp(object sender, KeyEventArgs e)
-        {
-            var people = PersonDataProvider.GetPeople();
-            var filtered = people.Where(people => people.FirstName.StartsWith(FirstNameSearchTXT.Text));
-            DataGrid.ItemsSource = filtered;
-        }
-
         private void CardNumSearchTXT_KeyUp(object sender, KeyEventArgs e)
         {
             var people = PersonDataProvider.GetPeople();
             var filtered = people.Where(people => people.Cardnum.StartsWith(CardNumSearchTXT.Text));
             DataGrid.ItemsSource = filtered;
+        }
+        private void Hide_Click(object sender, RoutedEventArgs e)
+        {
+            DataGrid.Visibility = Visibility.Collapsed;
+            HideButton.Visibility = Visibility.Collapsed;
+            ShowButton.Visibility = Visibility.Visible;
+
+        }
+        private void Show_Click(object sender, RoutedEventArgs e)
+        {
+            DataGrid.Visibility = Visibility.Visible;
+            HideButton.Visibility = Visibility.Visible;
+            ShowButton.Visibility = Visibility.Collapsed;
         }
     }
 }
