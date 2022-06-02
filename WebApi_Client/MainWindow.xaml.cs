@@ -21,7 +21,7 @@ namespace WebApi_Client
             InitializeComponent();
             SetTimer();
             DataGrid.Visibility = Visibility.Collapsed;
-            HideButton.Visibility = Visibility.Collapsed;
+            BottomBarHided.Visibility = Visibility.Collapsed;
         }
 
 
@@ -107,7 +107,7 @@ namespace WebApi_Client
         private void CardNumSearchTXT_KeyUp(object sender, KeyEventArgs e)
         {
             var people = PersonDataProvider.GetPeople();
-            var filtered = people.Where(people => people.Cardnum.StartsWith(CardNumSearchTXT.Text));
+            var filtered = people.Where(people => people.Cardnum.Contains(CardNumSearchTXT.Text));
             DataGrid.ItemsSource = filtered;
         }
         private void Hide_Click(object sender, RoutedEventArgs e)
@@ -115,6 +115,7 @@ namespace WebApi_Client
             DataGrid.Visibility = Visibility.Collapsed;
             HideButton.Visibility = Visibility.Collapsed;
             ShowButton.Visibility = Visibility.Visible;
+            BottomBarHided.Visibility = Visibility.Collapsed;
 
         }
         private void Show_Click(object sender, RoutedEventArgs e)
@@ -122,6 +123,7 @@ namespace WebApi_Client
             DataGrid.Visibility = Visibility.Visible;
             HideButton.Visibility = Visibility.Visible;
             ShowButton.Visibility = Visibility.Collapsed;
+            BottomBarHided.Visibility = Visibility.Visible;
         }
     }
 }

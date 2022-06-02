@@ -35,12 +35,15 @@
             </Button>
 
             <DataGrid HorizontalScrollBarVisibility="Auto" Grid.Row="1" x:Name="DataGrid" HorizontalAlignment="Center" VerticalAlignment="Center" Height="430" Width="1035" Loaded="DataGrid_Loaded" IsReadOnly="True" Background="Transparent" BorderBrush="Transparent" HorizontalGridLinesBrush="#FF044123" VerticalGridLinesBrush="Transparent"/>
-            <Button Grid.Row="2" Content="Betegfelvétel" Width="100" Style="{StaticResource LightGreenButton}" HorizontalAlignment="Right" Margin="0, 0, 20, 10" Click="AddPerson_Click"/>
-            <Button Content="Frissítés" HorizontalAlignment="Right" Style="{StaticResource LightGreenButton}" Margin="0,0,150,10" Grid.Row="2" VerticalAlignment="Top" Click="Refresh_Click"/>
-            <Button x:Name="HideButton" HorizontalAlignment="center" Background="Transparent" BorderBrush="Transparent" Width="32" Grid.Row="2" VerticalAlignment="Top" Click="Hide_Click">
+           
+            <StackPanel Grid.Row="2" x:Name="BottomBarHided">
+                <Button Content="Betegfelvétel" Margin="0,10,20,0" HorizontalAlignment="Right" Width="100" Style="{StaticResource LightGreenButton}" Click="AddPerson_Click"/>
+                <Button Content="Frissítés" Margin="0,-30,160,0" HorizontalAlignment="Right" Style="{StaticResource LightGreenButton}" VerticalAlignment="Top" Click="Refresh_Click"/>
+            </StackPanel>
+            <Button Grid.Row="2" x:Name="HideButton"  HorizontalAlignment="center" Margin="0,14,0,4" VerticalAlignment="Center"  Background="Transparent" BorderBrush="Transparent"  Width="32" Click="Hide_Click">
                 <Image Source="/show.png"></Image>
             </Button>
-            <Button x:Name="ShowButton" HorizontalAlignment="center" Background="Transparent" BorderBrush="Transparent" Width="32"  Grid.Row="2" VerticalAlignment="Top" Click="Show_Click">
+            <Button Grid.Row="2" x:Name="ShowButton" HorizontalAlignment="center" Margin="0,14,0,4" Background="Transparent" BorderBrush="Transparent"  Width="32" VerticalAlignment="Top" Click="Show_Click">
                 <Image Source="/hide.png"></Image>
             </Button>
         </Grid>

@@ -23,11 +23,16 @@ namespace WebApi_Assist
         public LoginAssistant()
         {
             InitializeComponent();
+            LoginPanelLoading.Visibility = Visibility.Collapsed;
+            textBlock.Visibility = Visibility.Collapsed;
         }
 
         private void Button_Click_Login(object sender, RoutedEventArgs e)
         {
-                MainWindow win2 = new MainWindow();
+            LoginPanel.Visibility = Visibility.Collapsed;
+            LoginPanelLoading.Visibility = Visibility.Visible;
+            textBlock.Visibility= Visibility.Visible;
+            MainWindow win2 = new MainWindow();
                 win2.Show();
                 this.Close();
         }
