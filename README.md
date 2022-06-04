@@ -21,14 +21,14 @@ A asszisztens pultján működik.
 
 >UNIT teszt a validáló fv-re
 
--Panasz rövid leírása (kötelező mezó = nem lehet üres)
+### Panasz rövid leírása (kötelező mezó = nem lehet üres)
 
 # Orvos kliens - .NET WPF vagy Blazor frontend
 A orvos irodájában működik.
 ## Látja a felvett betegek listáját
 Időrendi sorrendben rendezve dátum és idő szerint
 
-###Ki tud választani egy beteget
+### Ki tud választani egy beteget
 >Látja az adatait
 
 >Tudja módosítani
