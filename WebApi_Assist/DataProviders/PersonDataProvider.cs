@@ -9,17 +9,21 @@ namespace WebApi_Client.DataProviders
 {
     class PersonDataProvider
     {
+        //Rest api elérés
         private const string _url = "http://localhost:5000/api/person";
 
         public static IEnumerable<Person> GetPeople()
         {
             using (var client = new HttpClient())
             {
+                //Http get hívások kezelése
                 var response = client.GetAsync(_url).Result;
 
                 if (response.IsSuccessStatusCode)
                 {
+                    //A válasznak elkérjük a content-jét és beolvassuk, mint stringet
                     var rawData = response.Content.ReadAsStringAsync().Result;
+                    //Visszaalakítjuk person tömbbé
                     var people = JsonConvert.DeserializeObject<IEnumerable<Person>>(rawData);
                     return people;
                 }

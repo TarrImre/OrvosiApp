@@ -7,15 +7,15 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="close.png" />
-    <None Remove="closelight.png" />
-    <None Remove="doctorv2.png" />
-    <None Remove="hide.png" />
-    <None Remove="logoutv2.png" />
-    <None Remove="search.png" />
-    <None Remove="show.png" />
-    <None Remove="talca.png" />
-    <None Remove="talcalight.png" />
+    <None Remove="z_close.png" />
+    <None Remove="z_closelight.png" />
+    <None Remove="z_doctorv2.png" />
+    <None Remove="z_hide.png" />
+    <None Remove="z_logoutv2.png" />
+    <None Remove="z_search.png" />
+    <None Remove="z_show.png" />
+    <None Remove="z_talca.png" />
+    <None Remove="z_talcalight.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -27,15 +27,15 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="close.png" />
-    <Resource Include="closelight.png" />
-    <Resource Include="doctorv2.png" />
-    <Resource Include="hide.png" />
-    <Resource Include="logoutv2.png" />
-    <Resource Include="search.png" />
-    <Resource Include="show.png" />
-    <Resource Include="talca.png" />
-    <Resource Include="talcalight.png" />
+    <Resource Include="z_close.png" />
+    <Resource Include="z_closelight.png" />
+    <Resource Include="z_doctorv2.png" />
+    <Resource Include="z_hide.png" />
+    <Resource Include="z_logoutv2.png" />
+    <Resource Include="z_search.png" />
+    <Resource Include="z_show.png" />
+    <Resource Include="z_talca.png" />
+    <Resource Include="z_talcalight.png" />
   </ItemGroup>
 
   <ItemGroup>

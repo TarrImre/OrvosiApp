@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Text.RegularExpressions;
+﻿using System.Text.RegularExpressions;
 using System.Windows;
 using System.Windows.Input;
 using WebApi_Client.DataProviders;
@@ -15,16 +12,17 @@ namespace WebApi_Client
     public partial class EditPage : Window
     {
         private readonly Person _person;
+
+        //Person objektummal példányosítom
         public EditPage(Person person)
         {
             InitializeComponent();
-
-         
 
             if (person != null)
             {
                 _person = person;
 
+                //Hivatkozok a boxokra.
                 FirstNameTextBoxEDIT.Text = _person.FirstName;
                 LastNameTextBoxEDIT.Text = _person.LastName;
                 DateOfBirthDatePickerEDIT.SelectedDate = _person.DateOfBirth;
@@ -39,6 +37,7 @@ namespace WebApi_Client
                 UpdateButton.Visibility = Visibility.Visible;
                 DeleteButton.Visibility = Visibility.Visible;
             }
+            //Ha nem adunk át Person objektumot, ekkor hozunk létre
             else
             {
                 _person = new Person();
@@ -49,11 +48,12 @@ namespace WebApi_Client
             }
         }
 
-
         private void CreateButton_Click(object sender, RoutedEventArgs e)
         {
+            //Ha kivan töltve a UI...
             if (ValidatePerson())
             {
+                //Kitöltjük a _person objektumot azzal az adatokkal amiket megadunk
                 _person.FirstName = FirstNameTextBoxEDIT.Text;
                 _person.LastName = LastNameTextBoxEDIT.Text;
                 _person.DateOfBirth = DateOfBirthDatePickerEDIT.SelectedDate.Value;
@@ -63,19 +63,21 @@ namespace WebApi_Client
                 _person.Problem = ProblemTextBoxEDIT.Text;
                 _person.Diagnose = DiagnoseTextBoxEDIT.Text;
 
+                //A PersonDataProvider osztállyal hívjuk meg a szerver oldalt, hogy tárolja el a persont
                 PersonDataProvider.CreatePerson(_person);
 
+                //Azt jelzi, hogy adunk át valamilyen eredményt az ablakkal, ha X-el zárjuk be False marad.
                 DialogResult = true;
                 Close();
             }
         }
 
-
-
         private void UpdateButton_Click(object sender, RoutedEventArgs e)
         {
+            //Ha kivan töltve a UI...
             if (ValidatePerson())
             {
+                //Kitöltjük a _person objektumot azzal az adatokkal amiket megadunk
                 _person.FirstName = FirstNameTextBoxEDIT.Text;
                 _person.LastName = LastNameTextBoxEDIT.Text;
                 _person.DateOfBirth = DateOfBirthDatePickerEDIT.SelectedDate.Value;
@@ -85,40 +87,45 @@ namespace WebApi_Client
                 _person.Problem = ProblemTextBoxEDIT.Text;
                 _person.Diagnose = DiagnoseTextBoxEDIT.Text;
 
+                //A PersonDataProvider osztállyal hívjuk meg a szerver oldalt, hogy tárolja el a persont
                 PersonDataProvider.UpdatePerson(_person);
 
+                //Azt jelzi, hogy adunk át valamilyen eredményt az ablakkal, ha X-el zárjuk be False marad.
                 DialogResult = true;
                 Close();
             }
         }
 
+        //Beteg törlés
         private void DeleteButton_Click(object sender, RoutedEventArgs e)
         {
             MessageBoxResult msgBoxResult = MessageBox.Show("Biztosan törlöd?",
-                "Igen",
+                "Beteg törlése",
                 MessageBoxButton.YesNo,
                 MessageBoxImage.Warning,
                 MessageBoxResult.No
                 );
             if (msgBoxResult == MessageBoxResult.Yes)
             {
+                //A PersonDataProvider osztállyal hívjuk meg a szerver oldalt, hogy törölje a persont
                 PersonDataProvider.DeletePerson(_person.Id);
 
+                //Azt jelzi, hogy adunk át valamilyen eredményt az ablakkal, ha X-el zárjuk be False marad.
                 DialogResult = true;
                 Close();
             }
         }
 
+        //Adatok ellenőrzése
         private bool ValidatePerson()
         {
             Alert win2 = new Alert();
             win2.AlertTEXT.Text = "Sikeres módosítás!";
             win2.Show();
+
             if (string.IsNullOrEmpty(FirstNameTextBoxEDIT.Text))
             {
                 win2.AlertTEXT.Text = "Vezetéknév nem lehet üres!";
-
-                //MessageBox.Show("Vezetéknév nem lehet üres!");
                 return false;
             }
             else if (!Regex.IsMatch(FirstNameTextBoxEDIT.Text, @"^[a-zA-ZöüóőúéáűíÖÜÓŐÚÉÁŰÍ](.*[a-zA-ZöüóőúéáűíÖÜÓŐÚÉÁŰÍ])?$"))
@@ -187,6 +194,7 @@ namespace WebApi_Client
             return true;
         }
 
+        //Ablak mozgatás
         private void MovePanel_MouseDown(object sender, MouseButtonEventArgs e)
         {
             if (e.LeftButton == MouseButtonState.Pressed)
@@ -195,14 +203,10 @@ namespace WebApi_Client
             }
         }
 
+        //Ablak bezárás
         private void Button_Click_Close(object sender, RoutedEventArgs e)
         {
             Close();
         }
-        /*private void Button_Click_Talca(object sender, RoutedEventArgs e)
-        {
-            this.WindowState = WindowState.Minimized;
-        }*/
-
     }
 }
