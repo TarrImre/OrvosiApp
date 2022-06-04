@@ -53,8 +53,8 @@
         
         </StackPanel>
         <StackPanel x:Name="LoginPanelLoading" Grid.Row="1" Background="White" Width="300" Margin="70,20,70,65" Height="320" HorizontalAlignment="Center"  VerticalAlignment="Center">
-            <MediaElement Source="https://toxy.hu/csharpimages/loadingv3.gif"  Margin="0,0,0,0" HorizontalAlignment="Center"  VerticalAlignment="Center"/>
-            <TextBlock x:Name="textBlock" TextWrapping="Wrap" Text="Belépés..." Margin="0,0,0,0" HorizontalAlignment="Center"  VerticalAlignment="Center" Foreground="#044123" FontWeight="SemiBold" FontSize="16" />
+            <Image Source="https://toxy.hu/csharpimages/ikon.ico"  Margin="0,70,0,0" HorizontalAlignment="Center"  VerticalAlignment="Center" Width="80"/>
+            <TextBlock x:Name="textBlock" TextWrapping="Wrap" Text="Belépés..." Margin="0,60,0,0" HorizontalAlignment="Center"  VerticalAlignment="Center" Foreground="#044123" FontWeight="SemiBold" FontSize="16" />
         </StackPanel>
 
     </Grid>
