@@ -4,7 +4,7 @@
 A asszisztens pultján működik.
 
 ## Az érkező betegeket tudja rögzíteni
--Név
+>Név
 
 -Validáció
 
