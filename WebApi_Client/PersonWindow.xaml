@@ -15,7 +15,7 @@
         AllowsTransparency="True"
         Icon="https://toxy.hu/csharpimages/ikon.ico">
 
-    <Border Background="Transparent" BorderBrush="Transparent" BorderThickness="0">
+    <Border Background="Transparent" BorderBrush="#044123" BorderThickness="2">
         <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition Height="auto"/>

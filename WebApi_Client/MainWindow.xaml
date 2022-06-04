@@ -15,7 +15,7 @@
     <Window.DataContext>
         <Binding RelativeSource="{RelativeSource Self}"/>
     </Window.DataContext>
-    <Border Background="Transparent" BorderBrush="Transparent" BorderThickness="0">
+    <Border Background="Transparent" BorderBrush="#044123" BorderThickness="2">
         <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
