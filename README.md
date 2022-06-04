@@ -1,9 +1,9 @@
-#Orvosi alkalmazás
+# Orvosi alkalmazás
 
-#Asszisztens kliens - .NET WPF vagy Blazor frontend
+# Asszisztens kliens - .NET WPF vagy Blazor frontend
 A asszisztens pultján működik.
 
-##Az érkező betegeket tudja rögzíteni
+## Az érkező betegeket tudja rögzíteni
 Név
 Validáció
 Nem lehet: üres, whitespace, különleges karakterek szűrése pl !?_-:;#
@@ -15,7 +15,7 @@ Formátumra és hogy csak számokat tartalmaz
 UNIT teszt a validáló fv-re
 Panasz rövid leírása (kötelező mezó = nem lehet üres)
 
-#Orvos kliens - .NET WPF vagy Blazor frontend
+# Orvos kliens - .NET WPF vagy Blazor frontend
 A orvos irodájában működik.
 ##Látja a felvett betegek listáját
 Időrendi sorrendben rendezve dátum és idő szerint
@@ -29,8 +29,8 @@ Tudja törölni
 Adatok tárolása: JSON, XML vagy adatbázis(Entity FWK)
 Indításkor betölti a korábbi adatokat
 
-##Verziószám
+## Verziószám
 1.0.0
-###Fejlesztő
+### Fejlesztő
 Tarr Imre - - - tarr.imre2630@gmail.com 
 Végvári Richárd - - - ricsi722@gmail.com
