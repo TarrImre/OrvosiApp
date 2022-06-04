@@ -1,4 +1,4 @@
-# Orvosi alkalmazás
+#Orvosi alkalmazás
 
 #Asszisztens kliens - .NET WPF vagy Blazor frontend
 A asszisztens pultján működik.
@@ -29,8 +29,8 @@ Tudja törölni
 Adatok tárolása: JSON, XML vagy adatbázis(Entity FWK)
 Indításkor betölti a korábbi adatokat
 
-## Verziószám
+##Verziószám
 1.0.0
-### Fejlesztő
+###Fejlesztő
 Tarr Imre - - - tarr.imre2630@gmail.com 
 Végvári Richárd - - - ricsi722@gmail.com
