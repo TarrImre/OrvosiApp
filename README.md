@@ -1,7 +1,7 @@
 # Orvosi alkalmazás
 
 # Asszisztens kliens - .NET WPF vagy Blazor frontend
-A asszisztens pultján működik.
+Az asszisztens pultján működik.
 
 ## Az érkező betegeket tudja rögzíteni
 ### Név
