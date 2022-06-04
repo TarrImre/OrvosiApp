@@ -4,16 +4,16 @@
 A asszisztens pultján működik.
 
 ## Az érkező betegeket tudja rögzíteni
-Név
-Validáció
-Nem lehet: üres, whitespace, különleges karakterek szűrése pl !?_-:;#
-UNIT teszt a validáló fv-re
-Lakcím
-Tajszám Formátum: 000 000 000
-Validáció
-Formátumra és hogy csak számokat tartalmaz
-UNIT teszt a validáló fv-re
-Panasz rövid leírása (kötelező mezó = nem lehet üres)
+>Név
+>>Validáció
+>Nem lehet: üres, whitespace, különleges karakterek szűrése pl !?_-:;#
+>UNIT teszt a validáló fv-re>
+>Lakcím
+>Tajszám Formátum: 000 000 000
+>Validáció
+>Formátumra és hogy csak számokat tartalmaz
+>UNIT teszt a validáló fv-re
+>Panasz rövid leírása (kötelező mezó = nem lehet üres)
 
 # Orvos kliens - .NET WPF vagy Blazor frontend
 A orvos irodájában működik.
