@@ -5,7 +5,7 @@ A asszisztens pultján működik.
 
 ## Az érkező betegeket tudja rögzíteni
 >Név
->>Validáció
+>Validáció\n
 >Nem lehet: üres, whitespace, különleges karakterek szűrése pl !?_-:;#
 >UNIT teszt a validáló fv-re>
 >Lakcím
