@@ -4,7 +4,7 @@
 A asszisztens pultján működik.
 
 ## Az érkező betegeket tudja rögzíteni
--Név
+### Név
 
 >Validáció
 
@@ -12,7 +12,7 @@ A asszisztens pultján működik.
 
 >UNIT teszt a validáló fv-re>
 
--Lakcím
+### Lakcím
 >Tajszám Formátum: 000 000 000
 
 >Validáció
@@ -25,20 +25,28 @@ A asszisztens pultján működik.
 
 # Orvos kliens - .NET WPF vagy Blazor frontend
 A orvos irodájában működik.
-##Látja a felvett betegek listáját
+## Látja a felvett betegek listáját
 Időrendi sorrendben rendezve dátum és idő szerint
-Ki tud választani egy beteget
-Látja az adatait
-Tudja módosítani
-Diagnózis felvétele
-Tudja törölni
-#Szerver - .NET WEB API alkalmazás (önálló konzol alkalmazás)
-#Tárolja és szolgáltatja a bevitt adatokat
-Adatok tárolása: JSON, XML vagy adatbázis(Entity FWK)
-Indításkor betölti a korábbi adatokat
+
+###Ki tud választani egy beteget
+>Látja az adatait
+
+>Tudja módosítani
+
+>Diagnózis felvétele
+
+>Tudja törölni
+
+# Szerver - .NET WEB API alkalmazás (önálló konzol alkalmazás)
+
+# Tárolja és szolgáltatja a bevitt adatokat
+>Adatok tárolása: JSON, XML vagy adatbázis(Entity FWK). 
+>Indításkor betölti a korábbi adatokat
 
 ## Verziószám
 1.0.0
+
 ### Fejlesztő
 Tarr Imre - - - tarr.imre2630@gmail.com 
+
 Végvári Richárd - - - ricsi722@gmail.com
