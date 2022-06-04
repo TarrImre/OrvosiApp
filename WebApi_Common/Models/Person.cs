@@ -30,5 +30,6 @@ namespace WebApi_Common.Models
         {
             return $"{FirstName} {LastName} - {DateOfBirth.Date} - {City} - {StreetHouse} - {Cardnum} - {Problem} - {Diagnose} - {AddedTime}";
         }*/
+       
     }
 }
