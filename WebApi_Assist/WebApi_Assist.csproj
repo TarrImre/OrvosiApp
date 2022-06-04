@@ -7,17 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="close.png" />
-    <None Remove="closelight.png" />
-    <None Remove="hide.png" />
-    <None Remove="logoutv2.png" />
-    <None Remove="nursev5.png" />
-    <None Remove="show.png" />
-    <None Remove="talca.png" />
-    <None Remove="talcalight.png" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
   </ItemGroup>
 
@@ -26,14 +15,30 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="close.png" />
-    <Resource Include="closelight.png" />
-    <Resource Include="hide.png" />
-    <Resource Include="logoutv2.png" />
-    <Resource Include="nursev5.png" />
-    <Resource Include="show.png" />
-    <Resource Include="talca.png" />
-    <Resource Include="talcalight.png" />
+    <Resource Include="z_close.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="z_closelight.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="z_hide.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="z_logoutv2.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="z_nursev5.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="z_show.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="z_talca.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="z_talcalight.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
   </ItemGroup>
 
   <ItemGroup>

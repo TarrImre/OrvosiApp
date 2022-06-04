@@ -5,17 +5,18 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WebApi_Client"
         mc:Ignorable="d"
-        Title="Doktor pult" Height="500" Width="1035"
+        Title="Doktor pult" Height="500" Width="1050"
         WindowStyle="None"
         WindowStartupLocation="CenterScreen"
         ResizeMode="NoResize"
         Background="#D0E1D9"
         AllowsTransparency="True"
         Icon="https://toxy.hu/csharpimages/ikon.ico">
-
-    <Border Background="Transparent" BorderBrush="#044123" BorderThickness="2">
+    <Window.DataContext>
+        <Binding RelativeSource="{RelativeSource Self}"/>
+    </Window.DataContext>
+    <Border Background="Transparent" BorderBrush="Transparent" BorderThickness="0">
         <Grid>
-
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="*"/>
@@ -25,29 +26,66 @@
                 <TextBlock TextWrapping="Wrap" Text="Doktor pult" Margin="15,2,0,0" FontWeight="Bold" Foreground="#03b484"/>
             </StackPanel>
             <Button Grid.Row="0" Click="Button_Click_Close" Grid.Column="0" Background="Transparent" BorderBrush="Transparent" Margin="0,0,5,0"  Width="20" Height="20" HorizontalAlignment="Right">
-                <Image Source="/closelight.png"></Image>
+                <Image Source="/z_closelight.png"></Image>
             </Button>
             <Button Grid.Row="0" Click="Button_Click_Talca" Grid.Column="0" Background="Transparent" BorderBrush="Transparent" Margin="0,0,25,0"  Width="20" Height="20" HorizontalAlignment="Right">
-                <Image Source="/talcalight.png"></Image>
+                <Image Source="/z_talcalight.png"></Image>
             </Button>
             <Button Grid.Row="0" Click="Button_Click_Logout" Grid.Column="0" Background="Transparent" BorderBrush="Transparent" Margin="0,0,50,0"  Width="20" Height="20" HorizontalAlignment="Right">
-                <Image Source="/logoutv2.png"></Image>
+                <Image Source="/z_logoutv2.png"></Image>
             </Button>
 
-            <DataGrid Grid.Row="1" x:Name="DataGrid" HorizontalAlignment="Center" VerticalAlignment="Center" Height="416" Width="1035" Loaded="DataGrid_Loaded" SelectionChanged="DataGrid_SelectionChanged" IsReadOnly="True" Background="Transparent" BorderBrush="Transparent" HorizontalGridLinesBrush="#FF044123" VerticalGridLinesBrush="Transparent"/>
-           
+            <DataGrid RowStyle="{DynamicResource DataGridRowStyle1}" ColumnHeaderStyle="{DynamicResource DataGridColumnHeaderStyle1}" Grid.Row="1"
+                       x:Name="DataGrid"
+                       ItemsSource="{Binding PERSON, UpdateSourceTrigger=PropertyChanged}"
+                       AutoGenerateColumns="False"
+                       SelectionChanged="DataGrid_SelectionChanged"
+                       HorizontalScrollBarVisibility="Disabled"
+                       CanUserResizeColumns="False"
+                       Background="Transparent"
+                       BorderBrush="Transparent"
+                       VerticalGridLinesBrush="Transparent"
+                       HorizontalGridLinesBrush="Transparent"
+                       RowHeaderWidth="0"
+                       CanUserAddRows="false">
+                <DataGrid.Resources>
+                    <Style TargetType="DataGridCell">
+                        <Setter Property="VerticalAlignment" Value="Center"/>
+                    </Style>
+                    <SolidColorBrush x:Key="{x:Static SystemColors.HighlightBrushKey}" Color="Transparent" />
+                    <SolidColorBrush x:Key="{x:Static SystemColors.ControlBrushKey}" Color="Transparent" />
+                    <SolidColorBrush x:Key="{x:Static SystemColors.HighlightTextBrushKey}" Color="Black" />
+                    <SolidColorBrush x:Key="{x:Static SystemColors.ControlTextBrushKey}" Color="Black" />
+                    <Style TargetType="ScrollBar">
+                        <Setter Property="Background" Value="Transparent" />
+                    </Style>
+                </DataGrid.Resources>
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="ID" Binding="{Binding Id}" Width="35"/>
+                    <DataGridTextColumn Header="Vezetéknév" Binding="{Binding FirstName}" Width="85"/>
+                    <DataGridTextColumn Header="Keresztnév" Binding="{Binding LastName}" Width="85"/>
+                    <DataGridTextColumn Header="Születési idő" Binding="{Binding DateOfBirth}" Width="140"/>
+                    <DataGridTextColumn Header="Város" Binding="{Binding City}" Width="100"/>
+                    <DataGridTextColumn Header="Utca-házszám" Binding="{Binding StreetHouse}" Width="90"/>
+                    <DataGridTextColumn Header="TAJ" Binding="{Binding Cardnum}" Width="80"/>
+                    <DataGridTextColumn Header="Probléma" Binding="{Binding Problem}" Width="140"/>
+                    <DataGridTextColumn Header="Diagnózis" Binding="{Binding Diagnose}" Width="140"/>
+                    <DataGridTextColumn Header="Felvéve" Binding="{Binding AddedTime}" Width="140"/>
+                </DataGrid.Columns>
+            </DataGrid>
+
             <StackPanel Grid.Row="2" x:Name="BottomBarHided">
-                <Image Source="/search.png"  HorizontalAlignment="Left" Width="15" Margin="10,20,0,0"></Image>
+                <Image Source="/z_search.png"  HorizontalAlignment="Left" Width="15" Margin="10,20,0,0"></Image>
                 <Label Content="Tajszám"  Margin="25,-20,0,0"/>
                 <TextBox Style="{StaticResource TextBoxStyle}" Margin="80,-30,0,0" x:Name="CardNumSearchTXT" Height="22" Width="100" Padding="2,2,0,0" HorizontalAlignment="Left" KeyUp="CardNumSearchTXT_KeyUp" />
                 <Button Content="Betegfelvétel" Margin="0,-30,20,0" HorizontalAlignment="Right" Width="100" Style="{StaticResource LightGreenButton}" Click="AddPerson_Click"/>
                 <Button Content="Frissítés" Margin="0,-30,160,0" HorizontalAlignment="Right" Style="{StaticResource LightGreenButton}" VerticalAlignment="Top" Click="Refresh_Click"/>
             </StackPanel>
             <Button Grid.Row="2" x:Name="HideButton"  HorizontalAlignment="center" Margin="0,0,0,0" VerticalAlignment="Center"  Background="Transparent" BorderBrush="Transparent"  Width="32" Click="Hide_Click">
-                <Image Source="/show.png"></Image>
+                <Image Source="/z_show.png"></Image>
             </Button>
             <Button Grid.Row="2" x:Name="ShowButton" HorizontalAlignment="center" Margin="0,14,0,0" Background="Transparent" BorderBrush="Transparent"  Width="32" VerticalAlignment="Top" Click="Show_Click">
-                <Image Source="/hide.png"></Image>
+                <Image Source="/z_hide.png"></Image>
             </Button>
         </Grid>
     </Border>

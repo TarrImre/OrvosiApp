@@ -14,10 +14,9 @@
         Background="#D0E1D9"
         AllowsTransparency="True"
         Icon="https://toxy.hu/csharpimages/ikon.ico">
-    
-    <Border Background="Transparent" BorderBrush="#044123" BorderThickness="2">
-        <Grid>
 
+    <Border Background="Transparent" BorderBrush="Transparent" BorderThickness="0">
+        <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition Height="auto"/>
                 <RowDefinition Height="*"/>
@@ -43,12 +42,9 @@
                     <TextBlock TextWrapping="Wrap" Text="Beteg módosítás" Margin="10,2,0,0" FontWeight="Bold" Foreground="#03b484"/>
                 </StackPanel>
                 <Button Click="Button_Click_Close" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Background="Transparent" BorderBrush="Transparent" Margin="0,0,5,0"  Width="20" Height="20" HorizontalAlignment="Right">
-                    <Image Source="/closelight.png"></Image>
+                    <Image Source="/z_closelight.png"></Image>
                 </Button>
-               <!-- <Button Click="Button_Click_Talca" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Background="Transparent" BorderBrush="Transparent" Margin="0,0,25,0"  Width="20" Height="20" HorizontalAlignment="Right">
-                    <Image Source="https://toxy.hu/csharpimages/talcalight.png"></Image>
-                </Button>-->
-                
+
                 <Label Grid.Column="0" Grid.Row="1" Content="Vezetéknév" Margin="10"/>
                 <TextBox Style="{StaticResource TextBoxStyle}" x:Name="FirstNameTextBoxEDIT" Grid.Column="1" Grid.Row="1" Margin="10"/>
 
@@ -72,9 +68,6 @@
 
                 <Label Grid.Column="0" Grid.Row="8" Content="Diagnózis" Margin="10"/>
                 <TextBox Style="{StaticResource TextBoxStyle}" x:Name="DiagnoseTextBoxEDIT" Grid.Column="1" Grid.Row="8" Height="90" Margin="10" TextWrapping="Wrap"/>
-      
-
-
 
             </Grid>
 

@@ -14,7 +14,7 @@
         Background="#D0E1D9"
         AllowsTransparency="True"
         Icon="https://toxy.hu/csharpimages/ikon.ico">
-    <Border Background="Transparent" BorderBrush="#044123" BorderThickness="2">
+    <Border Background="Transparent" BorderBrush="Transparent" BorderThickness="0">
         <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition Height="30"/>
@@ -22,7 +22,7 @@
             </Grid.RowDefinitions>
             <StackPanel Grid.Row="0" Grid.Column="0" Background="#044123" x:Name="MovePanel" MouseDown="MovePanel_MouseDown"/>
             <Button Grid.Row="0" Click="Button_Click_Close" Grid.Column="0" Background="Transparent" BorderBrush="Transparent" Margin="0,0,5,0"  Width="20" Height="20" HorizontalAlignment="Right">
-                <Image Source="/closelight.png"></Image>
+                <Image Source="/z_closelight.png"></Image>
             </Button>
 
             <TextBlock x:Name="AlertTEXT" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,-30,0,0" Grid.Row="1" Text="" Width="280" FontWeight="Bold"/>
