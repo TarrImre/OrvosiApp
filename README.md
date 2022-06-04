@@ -1,4 +1,4 @@
-# Orvosi alkalmazás
+# Orvosi alkalmazás (Entity FWK)
 
 # Asszisztens kliens - .NET WPF vagy Blazor frontend
 Az asszisztens pultján működik.
