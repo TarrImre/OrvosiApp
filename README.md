@@ -1,6 +1,6 @@
 # Orvosi alkalmazás (Entity FWK)
 <br>
-** DEMO: ** https://www.youtube.com/watch?v=rUL26uevEZ8
+**DEMO:** https://www.youtube.com/watch?v=rUL26uevEZ8
 <br>
 
 # Asszisztens kliens - .NET WPF vagy Blazor frontend
