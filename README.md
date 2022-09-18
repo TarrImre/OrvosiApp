@@ -49,4 +49,4 @@ Időrendi sorrendben rendezve dátum és idő szerint
 ### Fejlesztő
 Tarr Imre - - - tarr.imre2630@gmail.com 
 
-Végvári Richárd - - - ricsi722@gmail.com
+~~Végvári Richárd - - - ricsi722@gmail.com~~
